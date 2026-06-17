@@ -1,4 +1,6 @@
 import CookieConsent from "@/components/CookieConsent";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 
 const treatments = [
   {
@@ -28,19 +30,7 @@ const aboutParagraphs = [
 export default function Home() {
   return (
     <>
-      <header className="site-header">
-        <a className="brand" href="#fooldal" aria-label="Cherry Kozmetika főoldal">
-          <span className="brand-mark">CK</span>
-          <span>
-            <strong>Cherry Kozmetika</strong>
-            <small>beauty studio</small>
-          </span>
-        </a>
-        <nav className="main-nav" aria-label="Fő navigáció">
-          <a href="#fooldal">Főoldal</a>
-          <a href="#kapcsolat">Kapcsolat</a>
-        </nav>
-      </header>
+      <SiteHeader contactHref="#kapcsolat" />
 
       <main id="fooldal">
         <section className="hero-section" aria-labelledby="hero-title">
@@ -76,9 +66,8 @@ export default function Home() {
         </section>
 
         <section className="about-section" aria-labelledby="about-title">
-          <p className="section-kicker about-label">Bemutatkozás</p>
           <div className="about-copy">
-            <h2 id="about-title">Szeretettel üdvözöllek!</h2>
+            <p className="section-kicker about-label">Bemutatkozás</p>
             <div className="about-text">
               {aboutParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -86,6 +75,7 @@ export default function Home() {
               <p className="about-signature">Várlak szeretettel: Anita</p>
             </div>
           </div>
+          <h2 id="about-title">Szeretettel üdvözöllek!</h2>
         </section>
 
         <section className="services-section" aria-labelledby="services-title">
@@ -120,13 +110,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="site-footer">
-        <p>Cherry Kozmetika</p>
-        <nav aria-label="Lábléc navigáció">
-          <a href="#fooldal">Főoldal</a>
-          <a href="#kapcsolat">Kapcsolat</a>
-        </nav>
-      </footer>
+      <SiteFooter contactHref="#kapcsolat" />
       <CookieConsent />
     </>
   );

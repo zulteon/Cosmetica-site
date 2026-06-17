@@ -22,7 +22,6 @@ export default function SiteHeader({ contactHref = "/#kapcsolat" }: SiteHeaderPr
         </span>
       </Link>
       <nav className="main-nav" aria-label="Fő navigáció">
-        <Link href="/">Főoldal</Link>
         <details className="nav-dropdown">
           <summary>Szolgáltatásaink</summary>
           <div className="dropdown-menu">

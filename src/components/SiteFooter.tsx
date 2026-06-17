@@ -16,7 +16,6 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
     <footer className="site-footer">
       <p>Cherry Kozmetika</p>
       <nav aria-label="Lábléc navigáció">
-        <Link href="/">Főoldal</Link>
         <Link href="/szolgaltatasaink/arckezeles">Arckezelés</Link>
         <Link href="/szolgaltatasaink/gyantazas">Gyantázás</Link>
         <Link href="/szolgaltatasaink/motivacios-mentorprogram">

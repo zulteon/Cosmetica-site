@@ -486,10 +486,9 @@ a {
 
 .pricing-heading {
   display: grid;
-  grid-template-columns: minmax(180px, 0.32fr) minmax(0, 1fr);
-  gap: clamp(32px, 7vw, 96px);
-  align-items: end;
+  justify-items: center;
   margin-bottom: clamp(32px, 5vw, 58px);
+  text-align: center;
 }
 
 .pricing-heading .section-kicker {
@@ -534,6 +533,7 @@ a {
 
 .price-card-title {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 16px;
   border-bottom: 1px solid var(--line);
@@ -683,7 +683,7 @@ a {
 }
 
 .mentor-card .blossom-dot {
-  margin: 0 0 24px;
+  margin: 0 auto 24px;
 }
 
 .mentor-card h3 {
@@ -803,7 +803,7 @@ a {
 }
 
 .trust-card .blossom-dot {
-  margin: 0 0 26px;
+  margin: 0 auto 26px;
 }
 
 .trust-card h3 {
@@ -1059,8 +1059,9 @@ a {
   }
 
   .price-card-title {
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
+    text-align: center;
   }
 
   .price-table {

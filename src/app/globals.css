@@ -1,0 +1,567 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffdfb;
+  --foreground: #322725;
+  --muted: #786a66;
+  --rose: #d88fa0;
+  --rose-deep: #aa6474;
+  --rose-soft: #f8e9eb;
+  --cream: #fff8f4;
+  --line: #ead8d5;
+  --shadow: 0 22px 70px rgba(110, 70, 62, 0.14);
+  --font-body: "Segoe UI", Arial, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(248, 218, 225, 0.58), transparent 34rem),
+    linear-gradient(180deg, #fffdfb 0%, #fff8f4 48%, #fffdfb 100%);
+  color: var(--foreground);
+  font-family: var(--font-body), "Segoe UI", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid rgba(234, 216, 213, 0.72);
+  background: rgba(255, 253, 251, 0.88);
+  padding: 14px clamp(20px, 5vw, 72px);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(216, 143, 160, 0.48);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffffff, #f8e2e7);
+  color: var(--rose-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 12px 28px rgba(170, 100, 116, 0.16);
+}
+
+.brand strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.brand small {
+  display: block;
+  margin-top: 4px;
+  color: var(--rose-deep);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.main-nav,
+.site-footer nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 3vw, 34px);
+  color: #574844;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.main-nav a,
+.site-footer a {
+  position: relative;
+  padding-block: 8px;
+}
+
+.main-nav a::after,
+.site-footer a::after {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 1px;
+  background: var(--rose);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 180ms ease;
+}
+
+.main-nav a:hover::after,
+.site-footer a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.hero-section {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: min(760px, calc(100vh - 76px));
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(72px, 12vw, 150px) clamp(20px, 6vw, 96px);
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(255, 253, 251, 0.96) 0%, rgba(255, 253, 251, 0.86) 42%, rgba(255, 253, 251, 0.4) 74%),
+    url("/cherry-blossom-hero.png") center / cover no-repeat;
+}
+
+.hero-section::after {
+  position: absolute;
+  inset: auto clamp(20px, 6vw, 96px) 0;
+  z-index: -1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(216, 143, 160, 0.72), transparent);
+  content: "";
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.eyebrow,
+.section-kicker {
+  color: var(--rose-deep);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-content h1,
+.section-copy h2,
+.about-copy h2,
+.section-heading h2,
+.contact-panel h2 {
+  margin: 0;
+  color: #332421;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.hero-content h1 {
+  max-width: 680px;
+  margin-top: 18px;
+  font-size: clamp(46px, 8vw, 96px);
+  line-height: 0.98;
+}
+
+.hero-lead {
+  max-width: 580px;
+  margin: 26px 0 0;
+  color: var(--muted);
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  margin-top: 34px;
+}
+
+.primary-button {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--rose-deep);
+  border-radius: 999px;
+  background: var(--rose-deep);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 16px 26px;
+  text-transform: uppercase;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.primary-button:hover {
+  background: transparent;
+  color: var(--rose-deep);
+  transform: translateY(-1px);
+}
+
+.text-link {
+  color: var(--rose-deep);
+  font-weight: 800;
+}
+
+.intro-section,
+.about-section,
+.services-section,
+.contact-section {
+  padding: clamp(72px, 10vw, 128px) clamp(20px, 6vw, 96px);
+}
+
+.intro-section {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.32fr) minmax(0, 1fr);
+  gap: clamp(32px, 7vw, 96px);
+  align-items: start;
+}
+
+.intro-motto,
+.treatment-card p,
+.contact-list {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.intro-motto {
+  max-width: 740px;
+  margin: 24px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+
+.intro-section .section-copy {
+  justify-self: end;
+}
+
+.intro-label {
+  margin: 10px 0 0;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.32fr) minmax(0, 1fr);
+  gap: clamp(32px, 7vw, 96px);
+  align-items: start;
+  border-top: 1px solid rgba(234, 216, 213, 0.72);
+}
+
+.about-label {
+  margin: 10px 0 0;
+}
+
+.about-copy {
+  max-width: 980px;
+  justify-self: end;
+}
+
+.section-copy h2,
+.about-copy h2,
+.section-heading h2,
+.contact-panel h2 {
+  max-width: 760px;
+  margin-top: 12px;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.08;
+}
+
+.about-text {
+  display: grid;
+  max-width: 860px;
+  gap: 16px;
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.82;
+}
+
+.about-text p {
+  margin: 0;
+}
+
+.about-signature {
+  color: var(--rose-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-style: italic;
+  line-height: 1.25;
+  padding-top: 10px;
+}
+
+.services-section {
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 32px;
+  margin-bottom: clamp(32px, 5vw, 58px);
+  text-align: left;
+}
+
+.section-heading .section-kicker {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  margin: 0;
+}
+
+.section-heading h2 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.treatment-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 270px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 248, 244, 0.82)),
+    radial-gradient(circle at 85% 12%, rgba(248, 218, 225, 0.78), transparent 9rem);
+  padding: clamp(24px, 4vw, 38px);
+  box-shadow: var(--shadow);
+}
+
+.blossom-dot {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: url("/cherry_ico.webp") center / cover no-repeat;
+  box-shadow: 0 14px 28px rgba(216, 143, 160, 0.22);
+}
+
+.treatment-card h3 {
+  margin: 34px 0 12px;
+  color: var(--rose-deep);
+  font-size: clamp(22px, 2.3vw, 28px);
+  line-height: 1.16;
+}
+
+.treatment-card p {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.contact-section {
+  padding-top: clamp(52px, 8vw, 108px);
+}
+
+.contact-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.78fr);
+  gap: clamp(32px, 7vw, 92px);
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 248, 244, 0.92)),
+    radial-gradient(circle at 90% 20%, rgba(248, 218, 225, 0.9), transparent 16rem);
+  padding: clamp(28px, 6vw, 64px);
+  box-shadow: var(--shadow);
+}
+
+.contact-list {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-list a {
+  color: #3c2b28;
+  font-weight: 800;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  border-top: 1px solid var(--line);
+  padding: 28px clamp(20px, 6vw, 96px);
+  color: #574844;
+}
+
+.site-footer p {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+}
+
+.cookie-consent {
+  position: fixed;
+  right: clamp(16px, 4vw, 42px);
+  bottom: clamp(16px, 4vw, 34px);
+  z-index: 40;
+  display: flex;
+  max-width: 620px;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid rgba(216, 143, 160, 0.42);
+  border-radius: 8px;
+  background: rgba(255, 253, 251, 0.94);
+  box-shadow: 0 18px 54px rgba(80, 50, 44, 0.16);
+  padding: 16px 18px 16px 20px;
+  backdrop-filter: blur(16px);
+}
+
+.cookie-consent p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.cookie-consent button {
+  flex: 0 0 auto;
+  min-height: 42px;
+  border: 1px solid var(--rose-deep);
+  border-radius: 999px;
+  background: var(--rose-deep);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.cookie-consent button:hover {
+  background: transparent;
+  color: var(--rose-deep);
+}
+
+@media (max-width: 900px) {
+  .intro-section,
+  .about-section,
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .section-heading .section-kicker,
+  .section-heading h2 {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+  }
+
+  .treatment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero-section {
+    min-height: 680px;
+    padding-top: 64px;
+  }
+
+  .hero-media {
+    background:
+      linear-gradient(180deg, rgba(255, 253, 251, 0.96) 0%, rgba(255, 253, 251, 0.82) 64%, rgba(255, 253, 251, 0.58) 100%),
+      url("/cherry-blossom-hero.png") center / cover no-repeat;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(40px, 13vw, 58px);
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .text-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cookie-consent {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Cherry Kozmetika",
-  description: "Letisztult kozmetika honlap fehér cseresznyevirág hangulattal.",
+  title: "Anita Kozmetika",
+  description: "Anita Kozmetika Szolnok: kozmetikai kezelések, gyantázás és szépségápolás.",
 };
 
 export default function RootLayout({

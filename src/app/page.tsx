@@ -51,8 +51,8 @@ export default function Home() {
               <a className="primary-button" href="#kapcsolat">
                 Időpontkérés
               </a>
-              <a className="text-link" href="tel:+36301234567">
-                +36 30 123 4567
+              <a className="text-link" href="tel:+36301116369">
+                +36 30 111 6369
               </a>
             </div>
           </div>
@@ -116,10 +116,11 @@ export default function Home() {
             </div>
             <div className="contact-list" aria-label="Kapcsolati adatok">
               {/* Tracking/form szabály: név, e-mail, telefonszám és üzenetszöveg nem kerülhet GA4/GTM event paraméterbe. */}
-              <a href="tel:+36301234567">+36 30 123 4567</a>
+              <a href="tel:+36301116369">+36 30 111 6369</a>
               <a href="mailto:hello@cherrykozmetika.hu">hello@cherrykozmetika.hu</a>
-              <span>Budapest, Cseresznyevirág utca 12.</span>
-              <span>Hétfő - Péntek: 09:00 - 18:00</span>
+              <span>5000 Szolnok, Boldog Sándor István krt. 40.</span>
+              <span>5091 Tószeg, Bartók Béla út 1/B</span>
+              <span>Nyitvatartás: hétfőtől szombatig, bejelentkezés alapján</span>
               <div className="contact-social-links" aria-label="Online kapcsolat">
                 <a href={facebookUrl} target="_blank" rel="noreferrer">
                   Facebook oldal

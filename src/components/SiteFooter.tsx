@@ -20,7 +20,7 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
   return (
     <footer className="site-footer">
       <div className="footer-brand">
-        <p>Cherry Kozmetika</p>
+        <p>Anita Kozmetika</p>
         <div className="social-links" aria-label="Közösségi oldalak">
           <a href={facebookUrl} target="_blank" rel="noreferrer">
             Facebook

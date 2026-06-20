@@ -113,9 +113,10 @@ export default function CookieConsent() {
     <aside className="cookie-consent" aria-label="Cookie tájékoztató">
       <div className="cookie-copy">
         <p>
-          A weboldal a működéshez szükséges cookie-kat használ. Analitikai és
-          marketing célú cookie-kat kizárólag az Ön hozzájárulása alapján
-          alkalmazhatunk. Hozzájárulását bármikor módosíthatja.
+          A weboldal cookie-kat (sütiket) használ a weboldal működése, a
+          felhasználói élmény növelése és statisztikai célokból. A weboldal által
+          használt cookie-k személyes adatkezeléséhez hozzájárulok. További
+          információt az Adatkezelési Tájékoztatóban talál.
         </p>
         <div className="cookie-links">
           <Link href="/adatvedelmi-tajekoztato">Adatvédelmi tájékoztató</Link>

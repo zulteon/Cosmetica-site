@@ -1,6 +1,6 @@
-export const COOKIE_STORAGE_KEY = "cherry-kozmetika-cookie-consent";
-export const COOKIE_CHANGE_EVENT = "cherry-kozmetika-cookie-change";
-export const COOKIE_SETTINGS_EVENT = "cherry-kozmetika-cookie-settings";
+export const COOKIE_STORAGE_KEY = "anita-kozmetika-cookie-consent";
+export const COOKIE_CHANGE_EVENT = "anita-kozmetika-cookie-change";
+export const COOKIE_SETTINGS_EVENT = "anita-kozmetika-cookie-settings";
 
 export type CookieConsentState = {
   necessary: true;

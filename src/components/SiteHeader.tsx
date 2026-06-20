@@ -14,11 +14,11 @@ export default function SiteHeader({ contactHref = "/#kapcsolat" }: SiteHeaderPr
 
   return (
     <header className="site-header">
-      <Link className="brand" href="/" aria-label="Cherry Kozmetika főoldal">
-        <span className="brand-mark">CK</span>
+      <Link className="brand" href="/" aria-label="Anita Kozmetika főoldal">
+        <span className="brand-mark">AK</span>
         <span>
-          <strong>Cherry Kozmetika</strong>
-          <small>beauty studio</small>
+          <strong>Anita Kozmetika</strong>
+          <small>Szolnok</small>
         </span>
       </Link>
       <nav className="main-nav" aria-label="Fő navigáció">

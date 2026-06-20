@@ -16,19 +16,19 @@ export const metadata: Metadata = {
 const treatments = [
   {
     title: "Arckezelések",
-    text: "Személyre szabott hidratáló, tisztító és anti-aging arckezelés Szolnokon.",
+    text: "Személyre szabott hidratáló, nyugtató és ragyogást adó kezelések.",
     icon: "/pictograms/arckezeles.webp",
     href: serviceLinks.facial,
   },
   {
-    title: "Gyantázás",
-    text: "Diszkrét, higiénikus női gyantázás nyugodt, figyelmes környezetben.",
+    title: "Bőrápolási tanácsadás",
+    text: "Otthoni rutin finomhangolása letisztult, bőrbarát termékekkel.",
     icon: "/pictograms/bortanacsadas.webp",
     href: serviceLinks.waxing,
   },
   {
-    title: "Szempilla / szemöldök",
-    text: "Festés, henna styling, lifting és laminálás a ragyogó tekintetért.",
+    title: "Relax szépségápolás",
+    text: "Csendes, nyugodt kezelések, ahol a bőröd és te is fellélegezhetsz.",
     icon: "/pictograms/relaxArc.webp",
     href: "/arlista#festes",
   },
@@ -85,12 +85,11 @@ export default function Home() {
         <section className="hero-section" aria-labelledby="hero-title">
           <div className="hero-media" aria-hidden="true" />
           <div className="hero-content">
-            <p className="eyebrow">Kozmetikus Szolnok szívéhez közel</p>
-            <h1 id="hero-title">Anita Kozmetika Szolnokon</h1>
+            <p className="eyebrow">A bőröd megérdemli a csendes törődést</p>
+            <h1 id="hero-title">Természetes szépség, nyugodt ragyogás</h1>
             <p className="hero-lead">
-              Finom, bőrkímélő kozmetikai kezelések, arckezelés Szolnokon,
-              gyantázás és szempilla-szemöldök szolgáltatások azoknak, akik a
-              letisztult ápolást és a csendes feltöltődést keresik.
+              Finom, bőrkímélő kozmetikai kezelések azoknak, akik a letisztult
+              ápolást és a csendes feltöltődést keresik.
             </p>
             <div className="hero-actions" aria-label="Fő műveletek">
               <a className="primary-button" href="#kapcsolat">
@@ -104,7 +103,7 @@ export default function Home() {
         </section>
 
         <section className="intro-section" aria-labelledby="intro-title">
-          <p className="section-kicker intro-label">Kozmetika Szolnok</p>
+          <p className="section-kicker intro-label">Kozmetika</p>
           <div className="section-copy">
             <h2 id="intro-title">Puha fények, tiszta felületek, figyelmes kezelés</h2>
             <p className="intro-motto">

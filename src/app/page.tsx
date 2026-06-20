@@ -16,19 +16,19 @@ export const metadata: Metadata = {
 const treatments = [
   {
     title: "Arckezelések",
-    text: "Személyre szabott hidratáló, nyugtató és ragyogást adó kezelések.",
+    text: "Személyre szabott hidratáló, nyugtató és ragyogást adó kezelések Tószegen és Szolnokon.",
     icon: "/pictograms/arckezeles.webp",
     href: serviceLinks.facial,
   },
   {
     title: "Bőrápolási tanácsadás",
-    text: "Otthoni rutin finomhangolása letisztult, bőrbarát termékekkel.",
+    text: "Otthoni rutin finomhangolása letisztult, bőrbarát termékekkel Tószegen és Szolnokon.",
     icon: "/pictograms/bortanacsadas.webp",
     href: serviceLinks.waxing,
   },
   {
     title: "Relax szépségápolás",
-    text: "Csendes, nyugodt kezelések, ahol a bőröd és te is fellélegezhetsz.",
+    text: "Csendes, nyugodt kezelések Tószegen és Szolnokon, ahol a bőröd és te is fellélegezhetsz.",
     icon: "/pictograms/relaxArc.webp",
     href: "/arlista#festes",
   },
@@ -178,10 +178,10 @@ export default function Home() {
               <span>{siteContact.openingHours}</span>
               <div className="contact-social-links" aria-label="Online kapcsolat">
                 <a className="social-icon-button" href={siteContact.facebookUrl} target="_blank" rel="noreferrer" aria-label="Facebook oldal">
-                  <Image src="/facebook.webp" alt="" width={58} height={58} aria-hidden="true" />
+                  <Image src="/facebook.webp" alt="" width={52} height={52} aria-hidden="true" />
                 </a>
                 <a className="social-icon-button" href={siteContact.messengerUrl} target="_blank" rel="noreferrer" aria-label="Messenger üzenet küldése">
-                  <Image src="/messenger.webp" alt="" width={58} height={58} aria-hidden="true" />
+                  <Image src="/messenger.webp" alt="" width={52} height={52} aria-hidden="true" />
                 </a>
                 <ContactFormModal className="contact-form-trigger" />
               </div>

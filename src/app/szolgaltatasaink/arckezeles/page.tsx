@@ -3,6 +3,7 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { siteContact } from "@/lib/site";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -70,7 +71,7 @@ export default function FacialTreatmentPage() {
 
       <main className="service-page">
         <section className="service-hero facial-hero" aria-labelledby="facial-title">
-          <div>
+          <div className="service-hero-copy">
             <p className="section-kicker">Arckezelés Szolnok</p>
             <h1 id="facial-title">Arckezelés Szolnokon – személyre szabott kozmetikai kezelések</h1>
             <p>
@@ -86,6 +87,16 @@ export default function FacialTreatmentPage() {
                 Arckezelés árak
               </Link>
             </div>
+          </div>
+          <div className="service-hero-image-wrap">
+            <Image
+              src="/szolgaltasok/arckezeles.webp"
+              alt="Arckezelés Anita Kozmetika szalonban"
+              width={900}
+              height={700}
+              className="service-hero-image"
+              priority
+            />
           </div>
         </section>
 

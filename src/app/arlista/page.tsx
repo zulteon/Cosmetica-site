@@ -12,6 +12,10 @@ export const metadata: Metadata = {
     "Anita Kozmetika árak Szolnokon: arckezelések, gyantázás, szempilla- és szemöldökszolgáltatások, fényterápia és kozmetikai extrák.",
 };
 
+function formatPrice(price?: string) {
+  return price?.replaceAll("Ft", "").trim() ?? "";
+}
+
 export default function PriceListPage() {
   return (
     <>
@@ -63,7 +67,7 @@ export default function PriceListPage() {
                           </th>
                           {table.compact ? null : <td data-label="Kezelés leírása">{row.description ?? ""}</td>}
                           {table.compact ? null : <td data-label="Kezelési idő">{row.time ?? ""}</td>}
-                          <td data-label="Ár">{row.price ?? ""}</td>
+                          <td data-label="Ár">{formatPrice(row.price)}</td>
                         </tr>
                       ))}
                     </tbody>

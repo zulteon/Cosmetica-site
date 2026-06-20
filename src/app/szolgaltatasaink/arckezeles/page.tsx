@@ -82,7 +82,7 @@ export default function FacialTreatmentPage() {
               <Link className="primary-button" href="/#kapcsolat">
                 Időpontkérés
               </Link>
-              <Link className="text-link" href="/arlista#arckezelesek">
+              <Link className="text-link" href="/arlista#arckezeles">
                 Arckezelés árak
               </Link>
             </div>
@@ -164,7 +164,7 @@ export default function FacialTreatmentPage() {
               lista az árak oldalon található, közvetlenül az arckezelések kategóriánál.
             </p>
           </div>
-          <Link className="primary-button" href="/arlista#arckezelesek">
+          <Link className="primary-button" href="/arlista#arckezeles">
             Arckezelés árak megtekintése
           </Link>
         </section>

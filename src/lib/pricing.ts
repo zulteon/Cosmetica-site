@@ -16,21 +16,9 @@ export type PriceTable = {
 
 export const priceTables: PriceTable[] = [
   {
-    id: "arckezelesek",
-    title: "Arckezelések",
+    id: "arckezeles",
+    title: "Arckezelés",
     rows: [
-      {
-        name: "Arcmasszázs",
-        description: "Letisztítás, masszázs, arctípusnak megfelelő befejezőkrém",
-        time: "30 perc",
-        price: "6.000.-Ft",
-      },
-      {
-        name: "Full masszázs",
-        description: "Arc, nyak, dekoltázs masszázs",
-        time: "45 perc",
-        price: "9.500.-Ft",
-      },
       {
         name: "Express arckezelés",
         description: "Letisztítás, peeling, arcmaszk, zárókrém",
@@ -124,8 +112,8 @@ export const priceTables: PriceTable[] = [
     ],
   },
   {
-    id: "szempilla-szemoldok",
-    title: "Szempilla / szemöldök",
+    id: "festes",
+    title: "Festés",
     compact: true,
     rows: [
       { name: "Szemöldök festés", price: "1.700.-Ft" },
@@ -134,33 +122,11 @@ export const priceTables: PriceTable[] = [
       { name: "Henna festés igazítással", price: "6.000.-Ft" },
       { name: "Szempilla lifting / festéssel", group: "Lifting", price: "9.000.-/ 11.000.-Ft" },
       { name: "Szemöldök laminálás / festéssel", group: "Laminálás", price: "8.000.-/ 10.000.-Ft" },
-      { name: "1D pilla építése", group: "Szempilla építés", price: "7.000.-Ft" },
-      {
-        name: "1D töltés",
-        description: "2 / 3 héten belül - 3 hét után teljes szett kerül felszámításra",
-        group: "Szempilla építés",
-        price: "4.000.-/ 5.500.-Ft",
-      },
-      { name: "2D pilla építése", group: "Szempilla építés", price: "9.000.-Ft" },
-      {
-        name: "2D töltés",
-        description: "2 / 3 héten belül - 3 hét után teljes szett kerül felszámításra",
-        group: "Szempilla építés",
-        price: "6.000.-/ 7.500.-Ft",
-      },
-      { name: "3D pilla építése", group: "Szempilla építés", price: "11.000.-Ft" },
-      {
-        name: "3D töltés",
-        description: "2 / 3 héten belül - 3 hét után teljes szett kerül felszámításra",
-        group: "Szempilla építés",
-        price: "8.000.-/ 9.000.-Ft",
-      },
-      { name: "Szempilla leoldása", group: "Szempilla építés", price: "3.000.-Ft" },
     ],
   },
   {
-    id: "egyeb-kozmetikai-szolgaltatasok",
-    title: "Egyéb kozmetikai szolgáltatások",
+    id: "fenyterapia",
+    title: "Fényterápia",
     rows: [
       {
         name: "Rapid LED fényterápia",
@@ -182,6 +148,50 @@ export const priceTables: PriceTable[] = [
       { name: "+ Hidroabrázió / Ultrahang", price: "4.000.-Ft" },
       { name: "+ Hát peeling", price: "3.000.-Ft" },
       { name: "+ LED maszk", description: "Pakolás felszívódását segítő", price: "3.500.-Ft" },
+    ],
+  },
+  {
+    id: "masszazs",
+    title: "Masszázs",
+    rows: [
+      {
+        name: "Arcmasszázs",
+        description: "Letisztítás, masszázs, arctípusnak megfelelő befejezőkrém",
+        time: "30 perc",
+        price: "6.000.-Ft",
+      },
+      {
+        name: "Full masszázs",
+        description: "Arc, nyak, dekoltázs masszázs",
+        time: "45 perc",
+        price: "9.500.-Ft",
+      },
+    ],
+  },
+  {
+    id: "szempilla-epites",
+    title: "Szempilla építés",
+    compact: true,
+    rows: [
+      { name: "1D pilla építése", price: "7.000.-Ft" },
+      {
+        name: "1D töltés",
+        description: "2 / 3 héten belül - 3 hét után teljes szett kerül felszámításra",
+        price: "4.000.-/ 5.500.-Ft",
+      },
+      { name: "2D pilla építése", price: "9.000.-Ft" },
+      {
+        name: "2D töltés",
+        description: "2 / 3 héten belül - 3 hét után teljes szett kerül felszámításra",
+        price: "6.000.-/ 7.500.-Ft",
+      },
+      { name: "3D pilla építése", price: "11.000.-Ft" },
+      {
+        name: "3D töltés",
+        description: "2 / 3 héten belül - 3 hét után teljes szett kerül felszámításra",
+        price: "8.000.-/ 9.000.-Ft",
+      },
+      { name: "Szempilla leoldása", price: "3.000.-Ft" },
     ],
   },
 ];

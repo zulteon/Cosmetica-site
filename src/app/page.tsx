@@ -30,7 +30,7 @@ const treatments = [
     title: "Szempilla / szemöldök",
     text: "Festés, henna styling, lifting és laminálás a ragyogó tekintetért.",
     icon: "/pictograms/relaxArc.webp",
-    href: "/arlista#szempilla-szemoldok",
+    href: "/arlista#festes",
   },
   {
     title: "Árlista",

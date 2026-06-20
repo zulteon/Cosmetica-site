@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ContactFormModal from "@/components/ContactFormModal";
 import CookieSettingsButton from "@/components/CookieSettingsButton";
 
 const facebookUrl = "https://www.facebook.com/profile.php?id=61556739532689&locale=hu_HU";
@@ -27,6 +28,7 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
           <a href={messengerUrl} target="_blank" rel="noreferrer">
             Messenger üzenet
           </a>
+          <ContactFormModal className="contact-form-trigger" />
         </div>
       </div>
       <nav aria-label="Lábléc navigáció">

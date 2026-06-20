@@ -1,4 +1,5 @@
 import CookieConsent from "@/components/CookieConsent";
+import ContactFormModal from "@/components/ContactFormModal";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 
@@ -116,6 +117,7 @@ export default function Home() {
                 <a href={messengerUrl} target="_blank" rel="noreferrer">
                   Messenger üzenet küldése
                 </a>
+                <ContactFormModal className="contact-form-trigger" />
               </div>
             </div>
           </div>

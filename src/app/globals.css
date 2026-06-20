@@ -241,6 +241,9 @@ a {
 .service-hero h1,
 .trust-section h2,
 .process-section h2,
+.service-detail-section h2,
+.service-info-grid h2,
+.service-faq-section h2,
 .service-cta h2,
 .legal-hero h1,
 .legal-card h2,
@@ -304,6 +307,26 @@ a {
 .text-link {
   color: var(--rose-deep);
   font-weight: 800;
+}
+
+.phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.phone-link::before {
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--rose-soft);
+  color: var(--rose-deep);
+  content: "☎";
+  font-size: 14px;
+  line-height: 1;
 }
 
 .intro-section,
@@ -377,6 +400,9 @@ a {
 .service-hero h1,
 .trust-section h2,
 .process-section h2,
+.service-detail-section h2,
+.service-info-grid h2,
+.service-faq-section h2,
 .service-cta h2,
 .legal-hero h1,
 .contact-panel h2 {
@@ -453,7 +479,7 @@ a {
 
 .treatment-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 18px;
 }
 
@@ -470,6 +496,14 @@ a {
     radial-gradient(circle at 85% 12%, rgba(248, 218, 225, 0.78), transparent 9rem);
   padding: clamp(24px, 4vw, 38px);
   box-shadow: var(--shadow);
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.treatment-card:hover {
+  border-color: rgba(216, 143, 160, 0.72);
+  transform: translateY(-2px);
 }
 
 .blossom-dot {
@@ -480,6 +514,14 @@ a {
   border-radius: 50%;
   background: url("/cherry_ico.webp") center / cover no-repeat;
   box-shadow: 0 14px 28px rgba(216, 143, 160, 0.22);
+}
+
+.treatment-icon {
+  display: block;
+  width: 82px;
+  height: 82px;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 .treatment-card h3 {
@@ -533,6 +575,19 @@ a {
   font-size: 15px;
   font-weight: 800;
   padding: 8px 14px;
+}
+
+.pricing-actions,
+.pricing-bottom-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 18px;
+  margin-top: 24px;
+}
+
+.pricing-bottom-cta {
+  margin-top: clamp(32px, 5vw, 56px);
 }
 
 .price-table-grid {
@@ -855,6 +910,105 @@ a {
   border-top: 1px solid rgba(234, 216, 213, 0.72);
 }
 
+.service-detail-section,
+.service-info-grid,
+.service-faq-section {
+  padding: clamp(72px, 10vw, 128px) clamp(20px, 6vw, 96px);
+  border-top: 1px solid rgba(234, 216, 213, 0.72);
+}
+
+.service-detail-section {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.86fr) minmax(0, 1fr);
+  gap: clamp(34px, 7vw, 92px);
+  align-items: start;
+}
+
+.service-detail-section p,
+.service-info-grid p,
+.service-faq-grid p {
+  color: var(--muted);
+  font-size: clamp(16px, 1.6vw, 18px);
+  line-height: 1.78;
+}
+
+.service-detail-section p {
+  max-width: 760px;
+  margin: 22px 0 0;
+}
+
+.detail-list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detail-list li {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 253, 251, 0.92);
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.65;
+  padding: 18px 18px 18px 48px;
+}
+
+.detail-list li::before {
+  position: absolute;
+  top: 21px;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--rose);
+  content: "";
+}
+
+.service-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.service-info-grid article,
+.service-faq-grid article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 253, 251, 0.94);
+  box-shadow: 0 16px 52px rgba(110, 70, 62, 0.1);
+  padding: clamp(24px, 4vw, 38px);
+}
+
+.service-info-grid h2 {
+  margin-bottom: 24px;
+  font-size: clamp(28px, 3.6vw, 44px);
+}
+
+.price-snippet {
+  align-items: center;
+}
+
+.price-snippet .primary-button {
+  justify-self: end;
+}
+
+.service-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-faq-grid h3 {
+  margin: 0 0 14px;
+  color: var(--rose-deep);
+  font-size: clamp(20px, 2vw, 25px);
+  line-height: 1.2;
+}
+
 .process-list {
   display: grid;
   gap: 18px;
@@ -901,6 +1055,10 @@ a {
 
 .service-cta .primary-button {
   margin-top: 30px;
+}
+
+.service-actions.centered {
+  justify-content: center;
 }
 
 .legal-page {
@@ -1264,9 +1422,9 @@ a {
 }
 
 .site-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1fr);
+  align-items: start;
   gap: 22px;
   border-top: 1px solid var(--line);
   padding: 28px clamp(20px, 6vw, 96px);
@@ -1282,6 +1440,20 @@ a {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 22px;
+}
+
+.footer-nap {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-nap .phone-link {
+  color: #3c2b28;
+  font-weight: 800;
 }
 
 .site-footer .social-links a::after {
@@ -1406,8 +1578,16 @@ a {
   }
 
   .trust-grid,
-  .process-section {
+  .process-section,
+  .service-detail-section,
+  .service-info-grid,
+  .service-faq-grid,
+  .site-footer {
     grid-template-columns: 1fr;
+  }
+
+  .price-snippet .primary-button {
+    justify-self: start;
   }
 
   .pricing-heading {
@@ -1464,7 +1644,7 @@ a {
     text-align: center;
   }
 
-  .site-footer {
+  .site-footer nav {
     align-items: flex-start;
     flex-direction: column;
   }

@@ -1,9 +1,7 @@
 import Link from "next/link";
 import ContactFormModal from "@/components/ContactFormModal";
 import CookieSettingsButton from "@/components/CookieSettingsButton";
-
-const facebookUrl = "https://www.facebook.com/profile.php?id=61556739532689&locale=hu_HU";
-const messengerUrl = "https://m.me/61556739532689";
+import { siteContact } from "@/lib/site";
 
 type SiteFooterProps = {
   contactHref?: string;
@@ -21,11 +19,18 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
     <footer className="site-footer">
       <div className="footer-brand">
         <p>Anita Kozmetika</p>
+        <address className="footer-nap">
+          <span>{siteContact.primaryAddress}</span>
+          <span>{siteContact.secondaryAddress}</span>
+          <a className="phone-link" href={siteContact.phoneHref}>{siteContact.phone}</a>
+          <span>{siteContact.email}</span>
+          <span>{siteContact.openingHours}</span>
+        </address>
         <div className="social-links" aria-label="Közösségi oldalak">
-          <a href={facebookUrl} target="_blank" rel="noreferrer">
+          <a href={siteContact.facebookUrl} target="_blank" rel="noreferrer">
             Facebook
           </a>
-          <a href={messengerUrl} target="_blank" rel="noreferrer">
+          <a href={siteContact.messengerUrl} target="_blank" rel="noreferrer">
             Messenger üzenet
           </a>
           <ContactFormModal className="contact-form-trigger" />

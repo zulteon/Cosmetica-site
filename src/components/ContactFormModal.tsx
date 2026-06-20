@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { FormEvent, useId, useState } from "react";
+import { siteContact } from "@/lib/site";
 
-const recipientEmail = "hello@cherrykozmetika.hu";
+const recipientEmail = "";
 
 type ContactFormModalProps = {
   className?: string;
@@ -35,6 +36,11 @@ export default function ContactFormModal({ className }: ContactFormModalProps) {
     ].join("\n");
 
     // Személyes adatokat tilos trackingbe küldeni: név, e-mail, telefonszám és üzenetszöveg nem kerülhet GA4/GTM event paraméterbe.
+    if (!recipientEmail) {
+      window.alert(`Az űrlap e-mail címzettje még nincs beállítva: ${siteContact.email}`);
+      return;
+    }
+
     window.location.href = `mailto:${recipientEmail}?subject=${encodeURIComponent(
       "Kapcsolatfelvétel - Anita Kozmetika",
     )}&body=${encodeURIComponent(body)}`;

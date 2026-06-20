@@ -2,6 +2,15 @@ import CookieConsent from "@/components/CookieConsent";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { priceTables } from "@/lib/pricing";
+import { siteContact } from "@/lib/site";
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Árak | Anita Kozmetika Szolnok",
+  description:
+    "Anita Kozmetika árak Szolnokon: arckezelések, gyantázás, szempilla- és szemöldökszolgáltatások, fényterápia és kozmetikai extrák.",
+};
 
 export default function PriceListPage() {
   return (
@@ -15,6 +24,14 @@ export default function PriceListPage() {
             <div>
               <h1 id="pricing-title">Anita Kozmetika árak 2026</h1>
               <p>Érvényes: 2026. március 1-től</p>
+              <div className="pricing-actions" aria-label="Árlista műveletek">
+                <Link className="primary-button" href="/#kapcsolat">
+                  Időpontot kérek
+                </Link>
+                <a className="text-link phone-link" href={siteContact.phoneHref}>
+                  Érdeklődöm telefonon
+                </a>
+              </div>
             </div>
           </div>
 
@@ -54,6 +71,14 @@ export default function PriceListPage() {
                 </div>
               </article>
             ))}
+          </div>
+          <div className="pricing-bottom-cta" aria-label="Időpontkérés">
+            <Link className="primary-button" href="/#kapcsolat">
+              Időpontot kérek
+            </Link>
+            <a className="text-link phone-link" href={siteContact.phoneHref}>
+              {siteContact.phone}
+            </a>
           </div>
         </section>
       </main>

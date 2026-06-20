@@ -1,6 +1,13 @@
 import CookieConsent from "@/components/CookieConsent";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Motivációs Mentorprogram",
+  description:
+    "Életmód és motivációs mentorprogram az Anita Kozmetikában: konzultációk, SOS motiváció és kombinált szépségápolási csomag.",
+};
 
 const mentorPackages = [
   {

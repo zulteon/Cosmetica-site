@@ -542,6 +542,7 @@ a {
 
 .price-card {
   overflow: hidden;
+  scroll-margin-top: 96px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 253, 251, 0.92);
@@ -574,6 +575,10 @@ a {
   font-size: clamp(24px, 3vw, 34px);
   font-weight: 500;
   letter-spacing: 0;
+}
+
+.price-card h2 a {
+  color: inherit;
 }
 
 .price-table-wrap {
@@ -626,6 +631,14 @@ a {
   color: #2f2320;
   font-weight: 900;
   white-space: nowrap;
+}
+
+.price-table-compact tbody th {
+  width: auto;
+}
+
+.price-table-compact td:last-child {
+  width: 28%;
 }
 
 .price-table tbody tr:last-child th,
@@ -1483,8 +1496,8 @@ a {
 
   .price-table tbody {
     display: grid;
-    gap: 12px;
-    padding: 14px;
+    gap: 14px;
+    padding: 16px;
   }
 
   .price-table tr {
@@ -1492,20 +1505,23 @@ a {
     border-radius: 8px;
     background: rgba(255, 253, 251, 0.9);
     box-shadow: 0 10px 30px rgba(110, 70, 62, 0.08);
-    padding: 14px;
+    padding: 16px;
   }
 
   .price-table tbody th {
     border-bottom: 1px solid rgba(234, 216, 213, 0.82);
-    padding: 0 0 10px;
+    color: #342522;
+    font-size: 17px;
+    line-height: 1.35;
+    padding: 0 0 12px;
   }
 
   .price-table td {
     display: grid;
-    grid-template-columns: minmax(110px, 0.42fr) minmax(0, 1fr);
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 4px;
     border-bottom: 1px solid rgba(234, 216, 213, 0.62);
-    padding: 10px 0;
+    padding: 11px 0;
     white-space: normal;
   }
 
@@ -1524,7 +1540,33 @@ a {
 
   .price-table td:last-child {
     border-bottom: 0;
+    color: #2f2320;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: 500;
     white-space: normal;
+  }
+
+  .price-table-compact tr {
+    display: grid;
+    gap: 12px;
+  }
+
+  .price-table-compact tbody th {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .price-table-compact td:last-child {
+    display: block;
+    width: 100%;
+    border-top: 1px solid rgba(234, 216, 213, 0.72);
+    padding-top: 12px;
+  }
+
+  .price-table-compact td:last-child::before {
+    display: block;
+    margin-bottom: 4px;
   }
 
   .cookie-consent {

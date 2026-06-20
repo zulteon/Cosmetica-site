@@ -8,13 +8,17 @@ export type PriceRow = {
 };
 
 export type PriceTable = {
+  id: string;
   title: string;
+  compact?: boolean;
   rows: PriceRow[];
 };
 
 export const priceTables: PriceTable[] = [
   {
+    id: "gyantazas",
     title: "Gyantázás",
+    compact: true,
     rows: [
       { name: "Szemöldök", price: "1.500.-Ft" },
       { name: "Áll + bajusz", price: "1.500.-+1.000.-Ft" },
@@ -34,17 +38,20 @@ export const priceTables: PriceTable[] = [
     ],
   },
   {
+    id: "festes",
     title: "Festés",
+    compact: true,
     rows: [
       { name: "Szemöldök", price: "1.700.-Ft" },
       { name: "Szempilla", price: "1.800.-Ft" },
-      { name: "Henna festés", description: "Formázással", price: "5.500.-Ft" },
-      { name: "Henna festés", description: "Igazítással", price: "6.000.-Ft" },
+      { name: "Henna festés formázással", price: "5.500.-Ft" },
+      { name: "Henna festés igazítással", price: "6.000.-Ft" },
       { name: "Szempilla lifting / festéssel", group: "Lifting", price: "9.000.-/ 11.000.-Ft" },
       { name: "Szemöldök laminálás / festéssel", group: "Laminálás", price: "8.000.-/ 10.000.-Ft" },
     ],
   },
   {
+    id: "masszazsok",
     title: "Masszázsok",
     rows: [
       {
@@ -59,6 +66,12 @@ export const priceTables: PriceTable[] = [
         time: "45 perc",
         price: "9.500.-Ft",
       },
+    ],
+  },
+  {
+    id: "arckezeles",
+    title: "Arckezelés",
+    rows: [
       {
         name: "Express arckezelés",
         description: "Letisztítás, peeling, arcmaszk, zárókrém",
@@ -130,6 +143,7 @@ export const priceTables: PriceTable[] = [
     ],
   },
   {
+    id: "fenyterapia",
     title: "Fényterápia",
     rows: [
       {
@@ -155,6 +169,7 @@ export const priceTables: PriceTable[] = [
     ],
   },
   {
+    id: "szempilla-epites",
     title: "Szempilla építés",
     rows: [
       { name: "1D pilla építése", price: "7.000.-Ft" },

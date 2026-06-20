@@ -20,18 +20,20 @@ export default function PriceListPage() {
 
           <div className="price-table-grid">
             {priceTables.map((table) => (
-              <article className="price-card" key={table.title}>
+              <article className="price-card" id={table.id} key={table.title}>
                 <div className="price-card-title">
                   <span className="blossom-dot small" aria-hidden="true" />
-                  <h2>{table.title}</h2>
+                  <h2>
+                    <a href={`#${table.id}`}>{table.title}</a>
+                  </h2>
                 </div>
                 <div className="price-table-wrap">
-                  <table className="price-table">
+                  <table className={table.compact ? "price-table price-table-compact" : "price-table"}>
                     <thead>
                       <tr>
                         <th scope="col">Kezelés neve</th>
-                        <th scope="col">Kezelés leírása</th>
-                        <th scope="col">Kezelési idő</th>
+                        {table.compact ? null : <th scope="col">Kezelés leírása</th>}
+                        {table.compact ? null : <th scope="col">Kezelési idő</th>}
                         <th scope="col">Ár</th>
                       </tr>
                     </thead>
@@ -42,8 +44,8 @@ export default function PriceListPage() {
                             {row.group ? <span className="price-row-group">{row.group}</span> : null}
                             {row.name}
                           </th>
-                          <td data-label="Kezelés leírása">{row.description ?? ""}</td>
-                          <td data-label="Kezelési idő">{row.time ?? ""}</td>
+                          {table.compact ? null : <td data-label="Kezelés leírása">{row.description ?? ""}</td>}
+                          {table.compact ? null : <td data-label="Kezelési idő">{row.time ?? ""}</td>}
                           <td data-label="Ár">{row.price ?? ""}</td>
                         </tr>
                       ))}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import ContactFormModal from "@/components/ContactFormModal";
 import CookieSettingsButton from "@/components/CookieSettingsButton";
 import { siteContact } from "@/lib/site";
+import Image from "next/image";
 
 type SiteFooterProps = {
   contactHref?: string;
@@ -27,11 +28,11 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
           <span>{siteContact.openingHours}</span>
         </address>
         <div className="social-links" aria-label="Közösségi oldalak">
-          <a className="social-link social-link-facebook" href={siteContact.facebookUrl} target="_blank" rel="noreferrer">
-            Facebook
+          <a className="social-icon-button" href={siteContact.facebookUrl} target="_blank" rel="noreferrer" aria-label="Facebook oldal">
+            <Image src="/facebook.webp" alt="" width={26} height={26} aria-hidden="true" />
           </a>
-          <a className="social-link social-link-messenger" href={siteContact.messengerUrl} target="_blank" rel="noreferrer">
-            Messenger üzenet
+          <a className="social-icon-button" href={siteContact.messengerUrl} target="_blank" rel="noreferrer" aria-label="Messenger üzenet küldése">
+            <Image src="/messenger.webp" alt="" width={26} height={26} aria-hidden="true" />
           </a>
           <ContactFormModal className="contact-form-trigger" />
         </div>

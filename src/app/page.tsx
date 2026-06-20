@@ -178,11 +178,11 @@ export default function Home() {
               <span>{siteContact.openingHours}</span>
               <span>Google Maps beágyazás: TODO</span>
               <div className="contact-social-links" aria-label="Online kapcsolat">
-                <a className="social-link social-link-facebook" href={siteContact.facebookUrl} target="_blank" rel="noreferrer">
-                  Facebook oldal
+                <a className="social-icon-button" href={siteContact.facebookUrl} target="_blank" rel="noreferrer" aria-label="Facebook oldal">
+                  <Image src="/facebook.webp" alt="" width={26} height={26} aria-hidden="true" />
                 </a>
-                <a className="social-link social-link-messenger" href={siteContact.messengerUrl} target="_blank" rel="noreferrer">
-                  Messenger üzenet küldése
+                <a className="social-icon-button" href={siteContact.messengerUrl} target="_blank" rel="noreferrer" aria-label="Messenger üzenet küldése">
+                  <Image src="/messenger.webp" alt="" width={26} height={26} aria-hidden="true" />
                 </a>
                 <ContactFormModal className="contact-form-trigger" />
               </div>

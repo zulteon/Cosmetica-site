@@ -1255,33 +1255,17 @@ a {
     color 180ms ease;
 }
 
-.social-link {
-  gap: 8px;
+.social-icon-button {
+  width: 44px;
+  min-width: 44px;
+  padding: 0;
 }
 
-.social-link::before {
-  display: inline-grid;
-  width: 24px;
-  height: 24px;
-  flex: 0 0 auto;
-  place-items: center;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 35% 30%, #fff 0 18%, transparent 19%),
-    linear-gradient(145deg, #f8d5de, #d88fa0);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 900;
-  line-height: 1;
-  text-transform: none;
-}
-
-.social-link-facebook::before {
-  content: "f";
-}
-
-.social-link-messenger::before {
-  content: "m";
+.social-icon-button img {
+  display: block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
 }
 
 .contact-social-links a:hover,

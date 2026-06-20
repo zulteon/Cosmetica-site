@@ -1256,16 +1256,25 @@ a {
 }
 
 .social-icon-button {
-  width: 44px;
-  min-width: 44px;
+  width: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  border: 0;
+  background: transparent;
   padding: 0;
 }
 
 .social-icon-button img {
   display: block;
-  width: 26px;
-  height: 26px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
+}
+
+.contact-social-links .social-icon-button:hover,
+.social-links .social-icon-button:hover {
+  background: transparent;
+  transform: translateY(-1px);
 }
 
 .contact-social-links a:hover,

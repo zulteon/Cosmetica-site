@@ -27,7 +27,6 @@ export default function PriceListPage() {
             <p className="section-kicker">Árak</p>
             <div>
               <h1 id="pricing-title">Anita Kozmetika árak 2026</h1>
-              <p>Érvényes: 2026. március 1-től</p>
               <div className="pricing-actions" aria-label="Árlista műveletek">
                 <Link className="primary-button" href="/#kapcsolat">
                   Időpontot kérek

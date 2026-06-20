@@ -18,7 +18,6 @@ export default function SiteHeader({ contactHref = "/#kapcsolat" }: SiteHeaderPr
         <span className="brand-mark">AK</span>
         <span>
           <strong>Anita Kozmetika</strong>
-          <small>Szolnok</small>
         </span>
       </Link>
       <nav className="main-nav" aria-label="Fő navigáció">

@@ -27,10 +27,10 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
           <span>{siteContact.openingHours}</span>
         </address>
         <div className="social-links" aria-label="Közösségi oldalak">
-          <a href={siteContact.facebookUrl} target="_blank" rel="noreferrer">
+          <a className="social-link social-link-facebook" href={siteContact.facebookUrl} target="_blank" rel="noreferrer">
             Facebook
           </a>
-          <a href={siteContact.messengerUrl} target="_blank" rel="noreferrer">
+          <a className="social-link social-link-messenger" href={siteContact.messengerUrl} target="_blank" rel="noreferrer">
             Messenger üzenet
           </a>
           <ContactFormModal className="contact-form-trigger" />

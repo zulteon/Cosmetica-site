@@ -32,16 +32,6 @@ const treatments = [
     icon: "/pictograms/relaxArc.webp",
     href: "/arlista#festes",
   },
-  {
-    title: "Árlista",
-    text: "Átlátható árak arckezeléshez, gyantázáshoz és kozmetikai szolgáltatásokhoz.",
-    href: serviceLinks.pricing,
-  },
-  {
-    title: "Kapcsolat / időpontkérés",
-    text: "Kérj időpontot telefonon, Messengeren vagy az online kontakt űrlapon.",
-    href: "#kapcsolat",
-  },
 ];
 
 const aboutParagraphs = [
@@ -189,10 +179,10 @@ export default function Home() {
               <span>{siteContact.openingHours}</span>
               <span>Google Maps beágyazás: TODO</span>
               <div className="contact-social-links" aria-label="Online kapcsolat">
-                <a href={siteContact.facebookUrl} target="_blank" rel="noreferrer">
+                <a className="social-link social-link-facebook" href={siteContact.facebookUrl} target="_blank" rel="noreferrer">
                   Facebook oldal
                 </a>
-                <a href={siteContact.messengerUrl} target="_blank" rel="noreferrer">
+                <a className="social-link social-link-messenger" href={siteContact.messengerUrl} target="_blank" rel="noreferrer">
                   Messenger üzenet küldése
                 </a>
                 <ContactFormModal className="contact-form-trigger" />

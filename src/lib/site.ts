@@ -3,7 +3,7 @@ export const siteContact = {
   city: "Szolnok",
   phone: "+36 30 111 6369",
   phoneHref: "tel:+36301116369",
-  email: "TODO: Anita e-mail címe",
+  email: "furanita.kozmetika@gmail.com",
   primaryAddress: "5000 Szolnok, Boldog Sándor István krt. 40.",
   secondaryAddress: "5091 Tószeg, Bartók Béla út 1/B",
   openingHours: "Nyitvatartás: hétfőtől szombatig, bejelentkezés alapján",

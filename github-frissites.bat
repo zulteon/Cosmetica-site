@@ -25,8 +25,7 @@ echo Aktualis valtozasok:
 git status --short
 echo.
 
-set /p COMMIT_MSG=Commit uzenet / Enter = weboldal frissites: 
-if "%COMMIT_MSG%"=="" set "COMMIT_MSG=weboldal frissites"
+set "COMMIT_MSG=weboldal frissites"
 
 git add -A
 git diff --cached --quiet
@@ -53,4 +52,4 @@ if errorlevel 1 (
 
 echo.
 echo Kesz, a valtozasok fent vannak GitHubon.
-pause
+exit /b 0

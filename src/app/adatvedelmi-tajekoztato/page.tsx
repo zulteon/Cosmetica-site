@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import CookieConsent from "@/components/CookieConsent";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import { siteContact } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Adatvédelmi tájékoztató | Anita Kozmetika Szolnok",
@@ -12,8 +13,8 @@ export const metadata: Metadata = {
 const controllerTodos = [
   "TODO: adatkezelő pontos neve",
   "TODO: székhely / telephely",
-  "TODO: e-mail",
-  "TODO: telefonszám",
+  siteContact.email,
+  siteContact.phone,
 ];
 
 const processedData = [

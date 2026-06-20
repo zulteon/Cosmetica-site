@@ -1255,19 +1255,21 @@ a {
     color 180ms ease;
 }
 
-.social-icon-button {
-  width: 42px;
-  min-width: 42px;
-  min-height: 42px;
+.contact-social-links .social-icon-button,
+.social-links .social-icon-button {
+  width: 58px;
+  min-width: 58px;
+  min-height: 58px;
   border: 0;
   background: transparent;
   padding: 0;
 }
 
-.social-icon-button img {
+.contact-social-links .social-icon-button img,
+.social-links .social-icon-button img {
   display: block;
-  width: 42px;
-  height: 42px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
 }
 
@@ -1741,6 +1743,7 @@ a {
   .price-table tr {
     display: grid;
     justify-items: center;
+    grid-template-columns: minmax(0, 1fr);
     border: 1px solid rgba(234, 216, 213, 0.88);
     border-radius: 8px;
     background: rgba(255, 253, 251, 0.9);
@@ -1749,12 +1752,15 @@ a {
   }
 
   .price-table tbody th {
+    width: 100% !important;
     border-bottom: 1px solid rgba(234, 216, 213, 0.82);
     color: #342522;
     font-size: 16px;
     line-height: 1.35;
     padding: 0 0 12px;
     text-align: center;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .price-table td {

@@ -179,10 +179,10 @@ export default function Home() {
               <span>Google Maps beágyazás: TODO</span>
               <div className="contact-social-links" aria-label="Online kapcsolat">
                 <a className="social-icon-button" href={siteContact.facebookUrl} target="_blank" rel="noreferrer" aria-label="Facebook oldal">
-                  <Image src="/facebook.webp" alt="" width={42} height={42} aria-hidden="true" />
+                  <Image src="/facebook.webp" alt="" width={58} height={58} aria-hidden="true" />
                 </a>
                 <a className="social-icon-button" href={siteContact.messengerUrl} target="_blank" rel="noreferrer" aria-label="Messenger üzenet küldése">
-                  <Image src="/messenger.webp" alt="" width={42} height={42} aria-hidden="true" />
+                  <Image src="/messenger.webp" alt="" width={58} height={58} aria-hidden="true" />
                 </a>
                 <ContactFormModal className="contact-form-trigger" />
               </div>

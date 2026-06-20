@@ -2,6 +2,7 @@ import CookieConsent from "@/components/CookieConsent";
 import ContactFormModal from "@/components/ContactFormModal";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import Image from "next/image";
 
 const facebookUrl = "https://www.facebook.com/profile.php?id=61556739532689&locale=hu_HU";
 const messengerUrl = "https://m.me/61556739532689";
@@ -79,6 +80,15 @@ export default function Home() {
               ))}
               <p className="about-signature">Várlak szeretettel: Anita</p>
             </div>
+          </div>
+          <div className="about-image-wrap">
+            <Image
+              src="/bemutatkozo.webp"
+              alt="Anita kozmetikus bemutatkozó portréja"
+              width={900}
+              height={1100}
+              className="about-image"
+            />
           </div>
         </section>
 

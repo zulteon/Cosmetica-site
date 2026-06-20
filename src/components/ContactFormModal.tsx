@@ -31,7 +31,7 @@ export default function ContactFormModal({ className }: ContactFormModalProps) {
       "Üzenet:",
       message || "-",
       "",
-      `Feliratkozás szépség tippekre: ${subscribed ? "igen" : "nem"}`,
+      `Hírlevél és ajánlatok hozzájárulás: ${subscribed ? "igen" : "nem"}`,
     ].join("\n");
 
     // Személyes adatokat tilos trackingbe küldeni: név, e-mail, telefonszám és üzenetszöveg nem kerülhet GA4/GTM event paraméterbe.
@@ -54,8 +54,8 @@ export default function ContactFormModal({ className }: ContactFormModalProps) {
                 <p className="section-kicker">Kapcsolat</p>
                 <h2 id={`${formId}-title`}>Üzenj nekünk!</h2>
               </div>
-              <button className="modal-close-button" type="button" onClick={() => setIsOpen(false)}>
-                Bezárás
+              <button className="modal-close-button" type="button" aria-label="Bezárás" onClick={() => setIsOpen(false)}>
+                X
               </button>
             </div>
 
@@ -83,7 +83,11 @@ export default function ContactFormModal({ className }: ContactFormModalProps) {
                   type="checkbox"
                   onChange={(event) => setSubscribed(event.target.checked)}
                 />
-                <span>Feliratkozom a szépség tippekre is.</span>
+                <span>
+                  Feliratkozom a hírlevélre, és hozzájárulok ahhoz, hogy részemre
+                  szépségápolási tippeket, akciókat és egyedi ajánlatokat küldjenek.
+                  Hozzájárulok ahhoz is, hogy ajánlatokkal megkeressenek.
+                </span>
               </label>
               <p className="form-privacy-note">
                 Az űrlap elküldésével Ön tudomásul veszi, hogy a megadott adatokat

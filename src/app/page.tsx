@@ -176,7 +176,6 @@ export default function Home() {
               <span>{siteContact.primaryAddress}</span>
               <span>{siteContact.secondaryAddress}</span>
               <span>{siteContact.openingHours}</span>
-              <span>Google Maps beágyazás: TODO</span>
               <div className="contact-social-links" aria-label="Online kapcsolat">
                 <a className="social-icon-button" href={siteContact.facebookUrl} target="_blank" rel="noreferrer" aria-label="Facebook oldal">
                   <Image src="/facebook.webp" alt="" width={58} height={58} aria-hidden="true" />
@@ -185,6 +184,28 @@ export default function Home() {
                   <Image src="/messenger.webp" alt="" width={58} height={58} aria-hidden="true" />
                 </a>
                 <ContactFormModal className="contact-form-trigger" />
+              </div>
+              <div className="map-grid" aria-label="Térképes elérhetőségek">
+                <article className="map-card">
+                  <h3>Szolnok</h3>
+                  <p>{siteContact.primaryAddress}</p>
+                  <iframe
+                    title="Anita Kozmetika Szolnok térkép"
+                    src="https://www.google.com/maps?q=5000%20Szolnok%2C%20Boldog%20S%C3%A1ndor%20Istv%C3%A1n%20krt.%2040.&output=embed"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </article>
+                <article className="map-card">
+                  <h3>Tószeg</h3>
+                  <p>{siteContact.secondaryAddress}</p>
+                  <iframe
+                    title="Anita Kozmetika Tószeg térkép"
+                    src="https://www.google.com/maps?q=5091%20T%C3%B3szeg%2C%20Bart%C3%B3k%20B%C3%A9la%20%C3%BAt%201%2FB&output=embed"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </article>
               </div>
             </div>
           </div>

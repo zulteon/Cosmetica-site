@@ -2,6 +2,9 @@ import CookieConsent from "@/components/CookieConsent";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 
+const facebookUrl = "https://www.facebook.com/profile.php?id=61556739532689&locale=hu_HU";
+const messengerUrl = "https://m.me/61556739532689";
+
 const treatments = [
   {
     title: "Arckezelések",
@@ -68,6 +71,7 @@ export default function Home() {
         <section className="about-section" aria-labelledby="about-title">
           <div className="about-copy">
             <p className="section-kicker about-label">Bemutatkozás</p>
+            <h2 id="about-title">Szeretettel üdvözöllek!</h2>
             <div className="about-text">
               {aboutParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -75,7 +79,6 @@ export default function Home() {
               <p className="about-signature">Várlak szeretettel: Anita</p>
             </div>
           </div>
-          <h2 id="about-title">Szeretettel üdvözöllek!</h2>
         </section>
 
         <section className="services-section" aria-labelledby="services-title">
@@ -101,10 +104,19 @@ export default function Home() {
               <h2 id="contact-title">Kérj időpontot egy nyugodt kezelésre</h2>
             </div>
             <div className="contact-list" aria-label="Kapcsolati adatok">
+              {/* Tracking/form szabály: név, e-mail, telefonszám és üzenetszöveg nem kerülhet GA4/GTM event paraméterbe. */}
               <a href="tel:+36301234567">+36 30 123 4567</a>
               <a href="mailto:hello@cherrykozmetika.hu">hello@cherrykozmetika.hu</a>
               <span>Budapest, Cseresznyevirág utca 12.</span>
               <span>Hétfő - Péntek: 09:00 - 18:00</span>
+              <div className="contact-social-links" aria-label="Online kapcsolat">
+                <a href={facebookUrl} target="_blank" rel="noreferrer">
+                  Facebook oldal
+                </a>
+                <a href={messengerUrl} target="_blank" rel="noreferrer">
+                  Messenger üzenet küldése
+                </a>
+              </div>
             </div>
           </div>
         </section>

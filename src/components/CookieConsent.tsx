@@ -1,53 +1,169 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import {
+  COOKIE_CHANGE_EVENT,
+  COOKIE_SETTINGS_EVENT,
+  COOKIE_STORAGE_KEY,
+  type CookieConsentState,
+  defaultCookieConsent,
+} from "@/lib/cookieConsent";
 
-const STORAGE_KEY = "cherry-kozmetika-cookie-consent";
-const CHANGE_EVENT = "cherry-kozmetika-cookie-change";
+function parseConsent(value: string | null): CookieConsentState | null {
+  if (!value) {
+    return null;
+  }
 
-function subscribe(callback: () => void) {
-  window.addEventListener("storage", callback);
-  window.addEventListener(CHANGE_EVENT, callback);
+  if (value === "accepted") {
+    return {
+      necessary: true,
+      analytics: true,
+      marketing: true,
+      updatedAt: new Date().toISOString(),
+    };
+  }
 
-  return () => {
-    window.removeEventListener("storage", callback);
-    window.removeEventListener(CHANGE_EVENT, callback);
+  try {
+    const parsed = JSON.parse(value) as Partial<CookieConsentState>;
+
+    return {
+      necessary: true,
+      analytics: Boolean(parsed.analytics),
+      marketing: Boolean(parsed.marketing),
+      updatedAt: typeof parsed.updatedAt === "string" ? parsed.updatedAt : "",
+    };
+  } catch {
+    return null;
+  }
+}
+
+function saveConsent(consent: Omit<CookieConsentState, "updatedAt">) {
+  const nextConsent: CookieConsentState = {
+    ...consent,
+    necessary: true,
+    updatedAt: new Date().toISOString(),
   };
-}
 
-function getSnapshot() {
-  return localStorage.getItem(STORAGE_KEY) === "accepted";
-}
-
-function getServerSnapshot() {
-  return true;
+  localStorage.setItem(COOKIE_STORAGE_KEY, JSON.stringify(nextConsent));
+  window.dispatchEvent(new Event(COOKIE_CHANGE_EVENT));
 }
 
 export default function CookieConsent() {
-  const hasAccepted = useSyncExternalStore(
-    subscribe,
-    getSnapshot,
-    getServerSnapshot,
-  );
+  const [hasChoice, setHasChoice] = useState(true);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [analytics, setAnalytics] = useState(defaultCookieConsent.analytics);
+  const [marketing, setMarketing] = useState(defaultCookieConsent.marketing);
 
-  function acceptCookies() {
-    localStorage.setItem(STORAGE_KEY, "accepted");
-    window.dispatchEvent(new Event(CHANGE_EVENT));
+  useEffect(() => {
+    function syncConsentState() {
+      const storedConsent = parseConsent(localStorage.getItem(COOKIE_STORAGE_KEY));
+
+      setHasChoice(Boolean(storedConsent));
+      setAnalytics(Boolean(storedConsent?.analytics));
+      setMarketing(Boolean(storedConsent?.marketing));
+    }
+
+    function openStoredSettings() {
+      syncConsentState();
+      setIsSettingsOpen(true);
+    }
+
+    syncConsentState();
+    window.addEventListener("storage", syncConsentState);
+    window.addEventListener(COOKIE_CHANGE_EVENT, syncConsentState);
+    window.addEventListener(COOKIE_SETTINGS_EVENT, openStoredSettings);
+
+    return () => {
+      window.removeEventListener("storage", syncConsentState);
+      window.removeEventListener(COOKIE_CHANGE_EVENT, syncConsentState);
+      window.removeEventListener(COOKIE_SETTINGS_EVENT, openStoredSettings);
+    };
+  }, []);
+
+  if (hasChoice && !isSettingsOpen) {
+    return null;
   }
 
-  if (hasAccepted) {
-    return null;
+  function acceptAll() {
+    saveConsent({ necessary: true, analytics: true, marketing: true });
+    setHasChoice(true);
+    setIsSettingsOpen(false);
+  }
+
+  function rejectOptional() {
+    saveConsent({ necessary: true, analytics: false, marketing: false });
+    setAnalytics(false);
+    setMarketing(false);
+    setHasChoice(true);
+    setIsSettingsOpen(false);
+  }
+
+  function saveCustomSettings() {
+    saveConsent({ necessary: true, analytics, marketing });
+    setHasChoice(true);
+    setIsSettingsOpen(false);
+  }
+
+  function openSettings() {
+    setIsSettingsOpen(true);
   }
 
   return (
     <aside className="cookie-consent" aria-label="Cookie tájékoztató">
-      <p>
-        Az oldal sütiket használ az alapvető működéshez és a felhasználói élmény
-        javításához.
-      </p>
-      <button type="button" onClick={acceptCookies}>
-        Elfogadom
-      </button>
+      <div className="cookie-copy">
+        <p>
+          A weboldal a működéshez szükséges cookie-kat használ. Analitikai és
+          marketing célú cookie-kat kizárólag az Ön hozzájárulása alapján
+          alkalmazhatunk. Hozzájárulását bármikor módosíthatja.
+        </p>
+        <div className="cookie-links">
+          <Link href="/adatvedelmi-tajekoztato">Adatvédelmi tájékoztató</Link>
+          <Link href="/cookie-tajekoztato">Cookie tájékoztató</Link>
+        </div>
+        {isSettingsOpen ? (
+          <div className="cookie-settings" aria-label="Cookie kategóriák">
+            <label>
+              <input checked disabled type="checkbox" />
+              <span>Szükséges cookie-k: mindig aktívak</span>
+            </label>
+            <label>
+              <input
+                checked={analytics}
+                type="checkbox"
+                onChange={(event) => setAnalytics(event.target.checked)}
+              />
+              <span>Analitikai cookie-k</span>
+            </label>
+            <label>
+              <input
+                checked={marketing}
+                type="checkbox"
+                onChange={(event) => setMarketing(event.target.checked)}
+              />
+              <span>Marketing cookie-k</span>
+            </label>
+          </div>
+        ) : null}
+      </div>
+      <div className="cookie-actions">
+        <button type="button" onClick={acceptAll}>
+          Elfogadom
+        </button>
+        <button type="button" onClick={rejectOptional}>
+          Elutasítom
+        </button>
+        {isSettingsOpen ? (
+          <button type="button" onClick={saveCustomSettings}>
+            Mentés
+          </button>
+        ) : (
+          <button type="button" onClick={openSettings}>
+            Beállítások
+          </button>
+        )}
+      </div>
+      {/* Trackingnél tilos személyes adatot küldeni: név, e-mail, telefonszám és üzenetszöveg nem kerülhet GA4/GTM event paraméterbe. */}
     </aside>
   );
 }

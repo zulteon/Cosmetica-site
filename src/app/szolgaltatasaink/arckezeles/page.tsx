@@ -44,7 +44,7 @@ export default function FacialTreatmentPage() {
                 Időpontkérés
               </Link>
               <Link className="text-link" href="/arlista">
-                Árlista megtekintése
+                Árak megtekintése
               </Link>
             </div>
           </div>

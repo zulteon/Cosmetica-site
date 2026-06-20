@@ -11,9 +11,9 @@ export default function PriceListPage() {
       <main className="pricing-page">
         <section className="pricing-section" aria-labelledby="pricing-title">
           <div className="pricing-heading">
-            <p className="section-kicker">Árlista</p>
+            <p className="section-kicker">Árak</p>
             <div>
-              <h1 id="pricing-title">Anita Kozmetika árlista 2026</h1>
+              <h1 id="pricing-title">Anita Kozmetika árak 2026</h1>
               <p>Érvényes: 2026. március 1-től</p>
             </div>
           </div>
@@ -42,9 +42,9 @@ export default function PriceListPage() {
                             {row.group ? <span className="price-row-group">{row.group}</span> : null}
                             {row.name}
                           </th>
-                          <td>{row.description ?? ""}</td>
-                          <td>{row.time ?? ""}</td>
-                          <td>{row.price ?? ""}</td>
+                          <td data-label="Kezelés leírása">{row.description ?? ""}</td>
+                          <td data-label="Kezelési idő">{row.time ?? ""}</td>
+                          <td data-label="Ár">{row.price ?? ""}</td>
                         </tr>
                       ))}
                     </tbody>

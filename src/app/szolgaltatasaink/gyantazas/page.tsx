@@ -44,7 +44,7 @@ export default function WaxingPage() {
                 Időpontkérés
               </Link>
               <Link className="text-link" href="/arlista">
-                Árlista megtekintése
+                Árak megtekintése
               </Link>
             </div>
           </div>

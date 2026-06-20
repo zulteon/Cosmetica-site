@@ -32,7 +32,7 @@ export default function SiteHeader({ contactHref = "/#kapcsolat" }: SiteHeaderPr
             </Link>
           </div>
         </details>
-        <Link href="/arlista">Árlista</Link>
+        <Link href="/arlista">Árak</Link>
         {contactLink}
       </nav>
     </header>

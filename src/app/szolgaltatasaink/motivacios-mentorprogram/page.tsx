@@ -51,7 +51,7 @@ export default function MotivationalMentorPage() {
 
         <section className="mentor-pricing-section" aria-labelledby="mentor-pricing-title">
           <div className="mentor-pricing-heading">
-            <p className="section-kicker">Árlista</p>
+            <p className="section-kicker">Árak</p>
             <h2 id="mentor-pricing-title">Választható mentor alkalmak</h2>
           </div>
 

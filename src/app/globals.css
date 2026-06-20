@@ -354,7 +354,7 @@ a {
 
 .about-section {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.58fr);
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.34fr);
   gap: clamp(34px, 6vw, 82px);
   align-items: center;
   border-top: 1px solid rgba(234, 216, 213, 0.72);
@@ -412,6 +412,8 @@ a {
 .about-image-wrap {
   position: relative;
   overflow: hidden;
+  width: min(100%, 360px);
+  justify-self: center;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 248, 244, 0.82);
@@ -1460,8 +1462,69 @@ a {
     text-align: center;
   }
 
-  .price-table {
-    min-width: 680px;
+  .price-table-wrap {
+    overflow-x: visible;
+  }
+
+  .price-table,
+  .price-table thead,
+  .price-table tbody,
+  .price-table tr,
+  .price-table th,
+  .price-table td {
+    display: block;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .price-table thead {
+    display: none;
+  }
+
+  .price-table tbody {
+    display: grid;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .price-table tr {
+    border: 1px solid rgba(234, 216, 213, 0.88);
+    border-radius: 8px;
+    background: rgba(255, 253, 251, 0.9);
+    box-shadow: 0 10px 30px rgba(110, 70, 62, 0.08);
+    padding: 14px;
+  }
+
+  .price-table tbody th {
+    border-bottom: 1px solid rgba(234, 216, 213, 0.82);
+    padding: 0 0 10px;
+  }
+
+  .price-table td {
+    display: grid;
+    grid-template-columns: minmax(110px, 0.42fr) minmax(0, 1fr);
+    gap: 12px;
+    border-bottom: 1px solid rgba(234, 216, 213, 0.62);
+    padding: 10px 0;
+    white-space: normal;
+  }
+
+  .price-table td:empty {
+    display: none;
+  }
+
+  .price-table td::before {
+    color: var(--rose-deep);
+    content: attr(data-label);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .price-table td:last-child {
+    border-bottom: 0;
+    white-space: normal;
   }
 
   .cookie-consent {

@@ -37,7 +37,7 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
         <Link href="/szolgaltatasaink/motivacios-mentorprogram">
           Motivációs Mentorprogram
         </Link>
-        <Link href="/arlista">Árlista</Link>
+        <Link href="/arlista">Árak</Link>
         <Link href="/adatvedelmi-tajekoztato">Adatvédelmi tájékoztató</Link>
         <Link href="/cookie-tajekoztato">Cookie tájékoztató</Link>
         {contactLink}

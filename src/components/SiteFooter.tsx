@@ -38,15 +38,15 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
         </div>
       </div>
       <nav aria-label="Lábléc navigáció">
+        {contactLink}
+        <Link href="/arlista">Árak</Link>
         <Link href="/szolgaltatasaink/arckezeles">Arckezelés</Link>
         <Link href="/szolgaltatasaink/gyantazas">Gyantázás</Link>
         <Link href="/szolgaltatasaink/motivacios-mentorprogram">
           Motivációs Mentorprogram
         </Link>
-        <Link href="/arlista">Árak</Link>
         <Link href="/adatvedelmi-tajekoztato">Adatvédelmi tájékoztató</Link>
         <Link href="/cookie-tajekoztato">Cookie tájékoztató</Link>
-        {contactLink}
         <CookieSettingsButton className="footer-cookie-button" />
       </nav>
     </footer>

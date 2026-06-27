@@ -9,7 +9,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Arckezelés Szolnokon | Tisztító, hidratáló és anti-aging kezelések",
   description:
-    "Személyre szabott arckezelések Szolnokon: tisztító, hidratáló, nyugtató és anti-aging kezelések bőrtípushoz igazítva. Kérj időpontot Anita Kozmetikába.",
+    "Személyre szabott arckezelések Szolnokon: tisztító, hidratáló, nyugtató és anti-aging kezelések bőrtípushoz igazítva. Kérj időpontot a Cherry Kozmetikába.",
 };
 
 const trustPoints = [
@@ -91,7 +91,7 @@ export default function FacialTreatmentPage() {
           <div className="service-hero-image-wrap">
             <Image
               src="/szolgaltasok/arckezeles.webp"
-              alt="Arckezelés Anita Kozmetika szalonban"
+              alt="Arckezelés Cherry Kozmetika szalonban"
               width={900}
               height={700}
               className="service-hero-image"
@@ -214,3 +214,4 @@ export default function FacialTreatmentPage() {
     </>
   );
 }
+

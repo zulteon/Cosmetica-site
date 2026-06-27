@@ -5,9 +5,9 @@ import SiteHeader from "@/components/SiteHeader";
 import { siteContact } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Adatvédelmi tájékoztató | Anita Kozmetika Szolnok",
+  title: "Adatvédelmi tájékoztató | Cherry Kozmetika Szolnok",
   description:
-    "Az Anita Kozmetika Szolnok adatvédelmi tájékoztató sablonja, TODO adatokkal és élesítés előtti jogi ellenőrzési jelzéssel.",
+    "A Cherry Kozmetika Szolnok adatvédelmi tájékoztató sablonja, TODO adatokkal és élesítés előtti jogi ellenőrzési jelzéssel.",
 };
 
 const controllerTodos = [
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
           <p className="section-kicker">Adatvédelem</p>
           <h1 id="privacy-title">Adatvédelmi tájékoztató</h1>
           <p>
-            Ez a tájékoztató sablon az Anita Kozmetika Szolnok weboldalához készült.
+            Ez a tájékoztató sablon a Cherry Kozmetika Szolnok weboldalához készült.
             A dokumentum nem minősül jogi tanácsadásnak, véglegesítés előtt
             adatvédelmi szakemberrel vagy jogásszal ellenőriztetni kell.
           </p>
@@ -215,3 +215,4 @@ export default function PrivacyPolicyPage() {
     </>
   );
 }
+

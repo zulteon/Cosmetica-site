@@ -2,11 +2,12 @@ import CookieConsent from "@/components/CookieConsent";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Motivációs Mentorprogram",
   description:
-    "Életmód és motivációs mentorprogram az Anita Kozmetikában: konzultációk, SOS motiváció és kombinált szépségápolási csomag.",
+    "Életmód és motivációs mentorprogram a Cherry Kozmetikában: konzultációk, SOS motiváció és kombinált szépségápolási csomag.",
 };
 
 const mentorPackages = [
@@ -48,12 +49,44 @@ export default function MotivationalMentorPage() {
 
       <main className="mentor-page">
         <section className="mentor-hero" aria-labelledby="mentor-title">
-          <p className="section-kicker">Motivációs Mentorprogram</p>
-          <h1 id="mentor-title">Életmód és Motivációs Mentorprogram</h1>
-          <p>
-            Személyes támogatás, reális célok és gyakorlatias útmutatás azoknak,
-            akik szeretnének könnyebben elindulni vagy új lendületet kapni.
-          </p>
+          <div className="mentor-hero-copy">
+            <p className="section-kicker">Motivációs Mentorprogram</p>
+            <h1 id="mentor-title">Életmód és Motivációs Mentorprogram</h1>
+            <p>
+              Személyes támogatás, reális célok és gyakorlatias útmutatás azoknak,
+              akik szeretnének könnyebben elindulni vagy új lendületet kapni.
+            </p>
+          </div>
+          <figure className="mentor-side-image mentor-side-image-top">
+            <Image
+              src="/mentor_program_kepek/1000013408.webp"
+              alt="Motivációs mentorprogram előrehaladást bemutató összeállítás"
+              width={1200}
+              height={900}
+              className="mentor-inline-image"
+              priority
+            />
+          </figure>
+        </section>
+
+        <section className="mentor-gallery-section" aria-labelledby="mentor-gallery-title">
+          <div className="mentor-gallery-heading">
+            <p className="section-kicker">Folyamat</p>
+            <h2 id="mentor-gallery-title">Látható változás, emberi tempóban</h2>
+            <p>
+              A mentorprogram nem gyors ígéret, hanem követhető, személyes támogatás.
+              A képek valódi folyamatokat mutatnak; az eredmények egyénenként eltérhetnek.
+            </p>
+          </div>
+          <figure className="mentor-side-image">
+            <Image
+              src="/mentor_program_kepek/1000013410.webp"
+              alt="Életmód mentorprogram több alkalmas folyamat képes összefoglalója"
+              width={1200}
+              height={900}
+              className="mentor-inline-image"
+            />
+          </figure>
         </section>
 
         <section className="mentor-pricing-section" aria-labelledby="mentor-pricing-title">

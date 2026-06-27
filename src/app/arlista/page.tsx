@@ -7,9 +7,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Árak | Anita Kozmetika Szolnok",
+  title: "Árak | Cherry Kozmetika Szolnok",
   description:
-    "Anita Kozmetika árak Szolnokon: arckezelések, gyantázás, szempilla- és szemöldökszolgáltatások, fényterápia és kozmetikai extrák.",
+    "Cherry Kozmetika árak Szolnokon: arckezelések, gyantázás, szempilla- és szemöldökszolgáltatások, fényterápia és kozmetikai extrák.",
 };
 
 function formatPrice(price?: string) {
@@ -26,7 +26,7 @@ export default function PriceListPage() {
           <div className="pricing-heading">
             <p className="section-kicker">Árak</p>
             <div>
-              <h1 id="pricing-title">Anita Kozmetika árak 2026</h1>
+              <h1 id="pricing-title">Cherry Kozmetika árak 2026</h1>
               <div className="pricing-actions" aria-label="Árlista műveletek">
                 <Link className="primary-button" href="/#kapcsolat">
                   Időpontot kérek
@@ -91,3 +91,4 @@ export default function PriceListPage() {
     </>
   );
 }
+

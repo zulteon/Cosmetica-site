@@ -35,7 +35,7 @@ export default function ContactFormModal({ className }: ContactFormModalProps) {
 
     // Személyes adatokat tilos trackingbe küldeni: név, e-mail, telefonszám és üzenetszöveg nem kerülhet GA4/GTM event paraméterbe.
     window.location.href = `mailto:${siteContact.email}?subject=${encodeURIComponent(
-      "Kapcsolatfelvétel - Anita Kozmetika",
+      "Kapcsolatfelvétel - Cherry Kozmetika",
     )}&body=${encodeURIComponent(body)}`;
   }
 
@@ -106,3 +106,4 @@ export default function ContactFormModal({ className }: ContactFormModalProps) {
     </>
   );
 }
+

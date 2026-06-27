@@ -8,9 +8,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Anita Kozmetika Szolnok | Arckezelés, gyantázás, szempilla",
+  title: "Cherry Kozmetika Szolnok | Arckezelés, gyantázás, szempilla",
   description:
-    "Anita Kozmetika Szolnokon: arckezelés, gyantázás, szempilla- és szemöldökszolgáltatások barátságos, igényes környezetben. Kérj időpontot online vagy telefonon.",
+    "Cherry Kozmetika Szolnokon: arckezelés, gyantázás, szempilla- és szemöldökszolgáltatások barátságos, igényes környezetben. Kérj időpontot online vagy telefonon.",
 };
 
 const treatments = [
@@ -190,7 +190,7 @@ export default function Home() {
                   <h3>Szolnok</h3>
                   <p>{siteContact.primaryAddress}</p>
                   <iframe
-                    title="Anita Kozmetika Szolnok térkép"
+                    title="Cherry Kozmetika Szolnok térkép"
                     src="https://www.google.com/maps?q=5000%20Szolnok%2C%20Boldog%20S%C3%A1ndor%20Istv%C3%A1n%20krt.%2040.&output=embed"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -200,7 +200,7 @@ export default function Home() {
                   <h3>Tószeg</h3>
                   <p>{siteContact.secondaryAddress}</p>
                   <iframe
-                    title="Anita Kozmetika Tószeg térkép"
+                    title="Cherry Kozmetika Tószeg térkép"
                     src="https://www.google.com/maps?q=5091%20T%C3%B3szeg%2C%20Bart%C3%B3k%20B%C3%A9la%20%C3%BAt%201%2FB&output=embed"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -217,3 +217,4 @@ export default function Home() {
     </>
   );
 }
+

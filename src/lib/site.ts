@@ -1,5 +1,5 @@
 export const siteContact = {
-  name: "Anita Kozmetika",
+  name: "Cherry Kozmetika",
   city: "Szolnok",
   phone: "+36 30 111 6369",
   phoneHref: "tel:+36301116369",
@@ -19,3 +19,4 @@ export const serviceLinks = {
   pricing: "/arlista",
   contact: "/#kapcsolat",
 };
+

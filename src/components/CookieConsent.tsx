@@ -38,6 +38,29 @@ function parseConsent(value: string | null): CookieConsentState | null {
   }
 }
 
+type GoogleConsentWindow = Window & {
+  dataLayer?: unknown[];
+  gtag?: (...args: unknown[]) => void;
+};
+
+function updateGoogleConsent(consent: Pick<CookieConsentState, "analytics" | "marketing">) {
+  const googleWindow = window as GoogleConsentWindow;
+
+  googleWindow.dataLayer = googleWindow.dataLayer || [];
+  googleWindow.gtag =
+    googleWindow.gtag ||
+    function gtag(...args: unknown[]) {
+      googleWindow.dataLayer?.push(args);
+    };
+
+  googleWindow.gtag("consent", "update", {
+    analytics_storage: consent.analytics ? "granted" : "denied",
+    ad_storage: consent.marketing ? "granted" : "denied",
+    ad_user_data: consent.marketing ? "granted" : "denied",
+    ad_personalization: consent.marketing ? "granted" : "denied",
+  });
+}
+
 function saveConsent(consent: Omit<CookieConsentState, "updatedAt">) {
   const nextConsent: CookieConsentState = {
     ...consent,
@@ -46,6 +69,7 @@ function saveConsent(consent: Omit<CookieConsentState, "updatedAt">) {
   };
 
   localStorage.setItem(COOKIE_STORAGE_KEY, JSON.stringify(nextConsent));
+  updateGoogleConsent(nextConsent);
   window.dispatchEvent(new Event(COOKIE_CHANGE_EVENT));
 }
 
@@ -62,6 +86,10 @@ export default function CookieConsent() {
       setHasChoice(Boolean(storedConsent));
       setAnalytics(Boolean(storedConsent?.analytics));
       setMarketing(Boolean(storedConsent?.marketing));
+
+      if (storedConsent) {
+        updateGoogleConsent(storedConsent);
+      }
     }
 
     function openStoredSettings() {

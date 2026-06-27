@@ -9,7 +9,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Gyantázás Szolnokon | Diszkrét, higiénikus női gyantázás",
   description:
-    "Diszkrét és higiénikus gyantázás Szolnokon az Anita Kozmetikában. Női gyantázás, arcgyanta, lábgyanta, kar-, hónalj- és bikinivonal kezelések. Kérj időpontot.",
+    "Diszkrét és higiénikus gyantázás Szolnokon a Cherry Kozmetikában. Női gyantázás, arcgyanta, lábgyanta, kar-, hónalj- és bikinivonal kezelések. Kérj időpontot.",
 };
 
 const trustPoints = [
@@ -91,7 +91,7 @@ export default function WaxingPage() {
           <div className="service-hero-image-wrap">
             <Image
               src="/szolgaltasok/gyantazas.webp"
-              alt="Gyantázás Anita Kozmetika szalonban"
+              alt="Gyantázás Cherry Kozmetika szalonban"
               width={900}
               height={700}
               className="service-hero-image"
@@ -121,7 +121,7 @@ export default function WaxingPage() {
             <p className="section-kicker">Szolgáltatások</p>
             <h2 id="waxing-services-title">Női gyantázás több testtájra, előzetes egyeztetéssel</h2>
             <p>
-              A gyantázás Szolnokon az Anita Kozmetikában diszkrét környezetben,
+              A gyantázás Szolnokon a Cherry Kozmetikában diszkrét környezetben,
               higiénikusan és alaposan történik. Ha bizonytalan vagy, telefonon vagy
               üzenetben is át tudjuk beszélni, melyik kezelésre van szükséged.
             </p>
@@ -214,3 +214,4 @@ export default function WaxingPage() {
     </>
   );
 }
+

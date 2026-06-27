@@ -19,7 +19,7 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
   return (
     <footer className="site-footer">
       <div className="footer-brand">
-        <p>Anita Kozmetika</p>
+        <p>Cherry Kozmetika</p>
         <address className="footer-nap">
           <span>{siteContact.primaryAddress}</span>
           <span>{siteContact.secondaryAddress}</span>
@@ -52,3 +52,4 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
     </footer>
   );
 }
+

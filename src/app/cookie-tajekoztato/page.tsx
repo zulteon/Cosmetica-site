@@ -5,9 +5,9 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "Cookie tájékoztató | Anita Kozmetika Szolnok",
+  title: "Cookie tájékoztató | Cherry Kozmetika Szolnok",
   description:
-    "Az Anita Kozmetika Szolnok cookie tájékoztató sablonja, cookie kategóriákkal és hozzájárulás módosítási lehetőséggel.",
+    "A Cherry Kozmetika Szolnok cookie tájékoztató sablonja, cookie kategóriákkal és hozzájárulás módosítási lehetőséggel.",
 };
 
 const cookieCategories = [
@@ -15,7 +15,7 @@ const cookieCategories = [
     name: "Szükséges cookie-k",
     purpose: "A weboldal alapvető működése, cookie-hozzájárulás megjegyzése.",
     legalBasis: "Jogos érdek / szolgáltatás nyújtásához szükséges technikai működés.",
-    provider: "Anita Kozmetika weboldal / TODO: használt CMP/cookie megoldás neve",
+    provider: "Cherry Kozmetika weboldal / TODO: használt CMP/cookie megoldás neve",
     retention: "TODO: adatmegőrzési idők",
     defaultState: "Mindig aktív",
   },
@@ -47,7 +47,7 @@ export default function CookiePolicyPage() {
           <p className="section-kicker">Cookie-k</p>
           <h1 id="cookie-title">Cookie tájékoztató</h1>
           <p>
-            Ez az oldal bemutatja, milyen cookie-kat használhat az Anita Kozmetika
+            Ez az oldal bemutatja, milyen cookie-kat használhat a Cherry Kozmetika
             Szolnok weboldala. A dokumentum sablon, élesítés előtt adatvédelmi
             szakemberrel ellenőriztetni kell.
           </p>
@@ -158,3 +158,4 @@ export default function CookiePolicyPage() {
     </>
   );
 }
+

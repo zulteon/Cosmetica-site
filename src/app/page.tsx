@@ -196,16 +196,6 @@ export default function Home() {
                     referrerPolicy="no-referrer-when-downgrade"
                   />
                 </article>
-                <article className="map-card">
-                  <h3>Tószeg</h3>
-                  <p>{siteContact.secondaryAddress}</p>
-                  <iframe
-                    title="Cherry Kozmetika Tószeg térkép"
-                    src="https://www.google.com/maps?q=5091%20T%C3%B3szeg%2C%20Bart%C3%B3k%20B%C3%A9la%20%C3%BAt%201%2FB&output=embed"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </article>
               </div>
             </div>
           </div>

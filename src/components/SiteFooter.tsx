@@ -1,6 +1,5 @@
 import Link from "next/link";
 import ContactFormModal from "@/components/ContactFormModal";
-import CookieSettingsButton from "@/components/CookieSettingsButton";
 import { siteContact } from "@/lib/site";
 import Image from "next/image";
 
@@ -47,7 +46,6 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
         </Link>
         <Link href="/adatvedelmi-tajekoztato">Adatvédelmi tájékoztató</Link>
         <Link href="/cookie-tajekoztato">Cookie tájékoztató</Link>
-        <CookieSettingsButton className="footer-cookie-button" />
       </nav>
     </footer>
   );

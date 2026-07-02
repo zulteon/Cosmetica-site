@@ -42,7 +42,7 @@ export default function ContactFormModal({ className }: ContactFormModalProps) {
   return (
     <>
       <button className={className ?? "contact-form-trigger"} type="button" onClick={() => setIsOpen(true)}>
-        Üzenj nekünk!
+        Üzenj nekünk bátran
       </button>
 
       {isOpen ? (
@@ -51,7 +51,7 @@ export default function ContactFormModal({ className }: ContactFormModalProps) {
             <div className="contact-modal-heading">
               <div>
                 <p className="section-kicker">Kapcsolat</p>
-                <h2 id={`${formId}-title`}>Üzenj nekünk!</h2>
+                <h2 id={`${formId}-title`}>Üzenj nekünk bátran</h2>
               </div>
               <button className="modal-close-button" type="button" aria-label="Bezárás" onClick={() => setIsOpen(false)}>
                 X
@@ -88,17 +88,17 @@ export default function ContactFormModal({ className }: ContactFormModalProps) {
                   Hozzájárulok ahhoz is, hogy ajánlatokkal megkeressenek.
                 </span>
               </label>
-              <p className="form-privacy-note">
-                Az űrlap elküldésével Ön tudomásul veszi, hogy a megadott adatokat
-                kapcsolatfelvétel és időpont-egyeztetés céljából kezeljük. Részletek:{" "}
-                <Link href="/adatvedelmi-tajekoztato">Adatkezelési tájékoztató</Link>.
-              </p>
               <div className="contact-form-actions">
                 <button type="submit">Küldés</button>
                 <button type="button" onClick={() => setIsOpen(false)}>
                   Mégsem
                 </button>
               </div>
+              <p className="form-privacy-note">
+                Az űrlap elküldésével Ön tudomásul veszi, hogy a megadott adatokat
+                kapcsolatfelvétel és időpont-egyeztetés céljából kezeljük. Részletek:{" "}
+                <Link href="/adatvedelmi-tajekoztato">Adatkezelési tájékoztató</Link>.
+              </p>
             </form>
           </div>
         </div>

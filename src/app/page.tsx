@@ -1,5 +1,6 @@
 import CookieConsent from "@/components/CookieConsent";
 import ContactFormModal from "@/components/ContactFormModal";
+import MessengerTrackingLink from "@/components/MessengerTrackingLink";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { serviceLinks, siteContact } from "@/lib/site";
@@ -180,9 +181,7 @@ export default function Home() {
                 <a className="social-icon-button" href={siteContact.facebookUrl} target="_blank" rel="noreferrer" aria-label="Facebook oldal">
                   <Image src="/facebook.webp" alt="" width={52} height={52} aria-hidden="true" />
                 </a>
-                <a className="social-icon-button" href={siteContact.messengerUrl} target="_blank" rel="noreferrer" aria-label="Messenger üzenet küldése">
-                  <Image src="/messenger.webp" alt="" width={52} height={52} aria-hidden="true" />
-                </a>
+                <MessengerTrackingLink />
                 <ContactFormModal className="contact-form-trigger" />
               </div>
               <div className="map-grid" aria-label="Térképes elérhetőségek">

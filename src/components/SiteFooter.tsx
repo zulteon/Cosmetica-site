@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ContactFormModal from "@/components/ContactFormModal";
+import MessengerTrackingLink from "@/components/MessengerTrackingLink";
 import { siteContact } from "@/lib/site";
 import Image from "next/image";
 
@@ -30,9 +31,7 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
           <a className="social-icon-button" href={siteContact.facebookUrl} target="_blank" rel="noreferrer" aria-label="Facebook oldal">
             <Image src="/facebook.webp" alt="" width={52} height={52} aria-hidden="true" />
           </a>
-          <a className="social-icon-button" href={siteContact.messengerUrl} target="_blank" rel="noreferrer" aria-label="Messenger üzenet küldése">
-            <Image src="/messenger.webp" alt="" width={52} height={52} aria-hidden="true" />
-          </a>
+          <MessengerTrackingLink />
           <ContactFormModal className="contact-form-trigger" />
         </div>
       </div>

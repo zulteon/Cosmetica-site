@@ -6,6 +6,7 @@ import {
   COOKIE_CHANGE_EVENT,
   COOKIE_SETTINGS_EVENT,
   COOKIE_STORAGE_KEY,
+  LEGACY_COOKIE_STORAGE_KEY,
   type CookieConsentState,
   defaultCookieConsent,
 } from "@/lib/cookieConsent";
@@ -59,6 +60,14 @@ function updateGoogleConsent(consent: Pick<CookieConsentState, "analytics" | "ma
     ad_user_data: consent.marketing ? "granted" : "denied",
     ad_personalization: consent.marketing ? "granted" : "denied",
   });
+
+  googleWindow.dataLayer.push({
+    event: "cookie_consent_update",
+    cookieConsent: {
+      analytics: consent.analytics,
+      marketing: consent.marketing,
+    },
+  });
 }
 
 function saveConsent(consent: Omit<CookieConsentState, "updatedAt">) {
@@ -69,6 +78,7 @@ function saveConsent(consent: Omit<CookieConsentState, "updatedAt">) {
   };
 
   localStorage.setItem(COOKIE_STORAGE_KEY, JSON.stringify(nextConsent));
+  localStorage.removeItem(LEGACY_COOKIE_STORAGE_KEY);
   updateGoogleConsent(nextConsent);
   window.dispatchEvent(new Event(COOKIE_CHANGE_EVENT));
 }
@@ -81,15 +91,13 @@ export default function CookieConsent() {
 
   useEffect(() => {
     function syncConsentState() {
-      const storedConsent = parseConsent(localStorage.getItem(COOKIE_STORAGE_KEY));
+      const storedConsent = parseConsent(
+        localStorage.getItem(COOKIE_STORAGE_KEY) ?? localStorage.getItem(LEGACY_COOKIE_STORAGE_KEY),
+      );
 
       setHasChoice(Boolean(storedConsent));
       setAnalytics(Boolean(storedConsent?.analytics));
       setMarketing(Boolean(storedConsent?.marketing));
-
-      if (storedConsent) {
-        updateGoogleConsent(storedConsent);
-      }
     }
 
     function openStoredSettings() {
@@ -141,10 +149,10 @@ export default function CookieConsent() {
     <aside className="cookie-consent" aria-label="Cookie tájékoztató">
       <div className="cookie-copy">
         <p>
-          A weboldal cookie-kat (sütiket) használ a weboldal működése, a
-          felhasználói élmény növelése és statisztikai célokból. A weboldal által
-          használt cookie-k személyes adatkezeléséhez hozzájárulok. További
-          információt az Adatkezelési Tájékoztatóban talál.
+          A weboldal működéséhez szükséges sütiket használunk. Hozzájárulás esetén
+          analitikai és marketing célú sütiket is használunk statisztikai méréshez,
+          hirdetésméréshez, remarketinghez és konverzióméréshez. A hozzájárulás
+          bármikor módosítható.
         </p>
         <div className="cookie-links">
           <Link href="/adatvedelmi-tajekoztato">Adatvédelmi tájékoztató</Link>

@@ -1599,6 +1599,39 @@ a {
   display: none;
 }
 
+.footer-settings-button {
+  position: relative;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 8px 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.footer-settings-button::after {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 1px;
+  background: var(--rose);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 180ms ease;
+}
+
+.footer-settings-button:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 .cookie-consent {
   position: fixed;
   right: clamp(16px, 4vw, 42px);

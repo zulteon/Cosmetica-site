@@ -1,6 +1,7 @@
 import CookieConsent from "@/components/CookieConsent";
 import ContactFormModal from "@/components/ContactFormModal";
 import MessengerTrackingLink from "@/components/MessengerTrackingLink";
+import PhoneTrackingLink from "@/components/PhoneTrackingLink";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { serviceLinks, siteContact } from "@/lib/site";
@@ -96,9 +97,9 @@ export default function Home() {
               <a className="primary-button" href="#kapcsolat">
                 Időpontkérés
               </a>
-              <a className="text-link phone-link" href={siteContact.phoneHref}>
+              <PhoneTrackingLink className="text-link phone-link" href={siteContact.phoneHref}>
                 {siteContact.phone}
-              </a>
+              </PhoneTrackingLink>
             </div>
           </div>
         </section>
@@ -172,7 +173,9 @@ export default function Home() {
             </div>
             <div className="contact-list" aria-label="Kapcsolati adatok">
               {/* Tracking/form szabály: név, e-mail, telefonszám és üzenetszöveg nem kerülhet GA4/GTM event paraméterbe. */}
-              <a className="phone-link" href={siteContact.phoneHref}>{siteContact.phone}</a>
+              <PhoneTrackingLink className="phone-link" href={siteContact.phoneHref}>
+                {siteContact.phone}
+              </PhoneTrackingLink>
               <span>{siteContact.email}</span>
               <span>{siteContact.primaryAddress}</span>
               <span>{siteContact.secondaryAddress}</span>

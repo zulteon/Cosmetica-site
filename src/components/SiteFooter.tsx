@@ -1,6 +1,8 @@
 import Link from "next/link";
 import ContactFormModal from "@/components/ContactFormModal";
+import CookieSettingsButton from "@/components/CookieSettingsButton";
 import MessengerTrackingLink from "@/components/MessengerTrackingLink";
+import PhoneTrackingLink from "@/components/PhoneTrackingLink";
 import { siteContact } from "@/lib/site";
 import Image from "next/image";
 
@@ -23,7 +25,9 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
         <address className="footer-nap">
           <span>{siteContact.primaryAddress}</span>
           <span>{siteContact.secondaryAddress}</span>
-          <a className="phone-link" href={siteContact.phoneHref}>{siteContact.phone}</a>
+          <PhoneTrackingLink className="phone-link" href={siteContact.phoneHref}>
+            {siteContact.phone}
+          </PhoneTrackingLink>
           <span>{siteContact.email}</span>
           <span>{siteContact.openingHours}</span>
         </address>
@@ -45,6 +49,7 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
         </Link>
         <Link href="/adatvedelmi-tajekoztato">Adatvédelmi tájékoztató</Link>
         <Link href="/cookie-tajekoztato">Cookie tájékoztató</Link>
+        <CookieSettingsButton className="footer-settings-button" />
       </nav>
     </footer>
   );

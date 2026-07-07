@@ -2,17 +2,11 @@
 
 import Image from "next/image";
 import { siteContact } from "@/lib/site";
-
-type DataLayerWindow = Window & {
-  dataLayer?: Array<Record<string, unknown>>;
-};
+import { pushDataLayerEvent } from "@/lib/dataLayer";
 
 export default function MessengerTrackingLink() {
   function trackMessengerClick() {
-    const trackingWindow = window as DataLayerWindow;
-
-    trackingWindow.dataLayer = trackingWindow.dataLayer || [];
-    trackingWindow.dataLayer.push({
+    pushDataLayerEvent({
       event: "messenger_click",
     });
   }

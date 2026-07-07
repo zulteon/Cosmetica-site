@@ -1,4 +1,5 @@
 import CookieConsent from "@/components/CookieConsent";
+import PhoneTrackingLink from "@/components/PhoneTrackingLink";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { siteContact } from "@/lib/site";
@@ -202,9 +203,9 @@ export default function FacialTreatmentPage() {
             <Link className="primary-button" href="/#kapcsolat">
               Időpontot kérek
             </Link>
-            <a className="text-link phone-link" href={siteContact.phoneHref}>
+            <PhoneTrackingLink className="text-link phone-link" href={siteContact.phoneHref}>
               {siteContact.phone}
-            </a>
+            </PhoneTrackingLink>
           </div>
         </section>
       </main>

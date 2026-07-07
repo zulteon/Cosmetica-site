@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { FormEvent, useId, useState } from "react";
+import { pushDataLayerEvent } from "@/lib/dataLayer";
 import { siteContact } from "@/lib/site";
 
 type ContactFormModalProps = {
@@ -21,6 +22,7 @@ export default function ContactFormModal({ className }: ContactFormModalProps) {
     const email = String(formData.get("email") ?? "").trim();
     const phone = String(formData.get("phone") ?? "").trim();
     const message = String(formData.get("message") ?? "").trim();
+    const selectedService = String(formData.get("service") ?? "").trim();
 
     const body = [
       `Név: ${name || "-"}`,
@@ -34,6 +36,13 @@ export default function ContactFormModal({ className }: ContactFormModalProps) {
     ].join("\n");
 
     // Személyes adatokat tilos trackingbe küldeni: név, e-mail, telefonszám és üzenetszöveg nem kerülhet GA4/GTM event paraméterbe.
+    pushDataLayerEvent({
+      event: "generate_lead",
+      lead_method: "form",
+      service_category: selectedService || "egyeb",
+      page_type: "contact",
+    });
+
     window.location.href = `mailto:${siteContact.email}?subject=${encodeURIComponent(
       "Kapcsolatfelvétel - Cherry Kozmetika",
     )}&body=${encodeURIComponent(body)}`;

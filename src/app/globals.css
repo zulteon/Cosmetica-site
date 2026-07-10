@@ -1555,8 +1555,31 @@ a {
   text-transform: uppercase;
 }
 
+.contact-form-actions button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 .contact-form-actions button[type="button"] {
   background: transparent;
+  color: var(--rose-deep);
+}
+
+.form-status-message {
+  margin: 0;
+  border: 1px solid rgba(110, 150, 118, 0.28);
+  border-radius: 8px;
+  background: rgba(245, 250, 246, 0.86);
+  color: #47614c;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.45;
+  padding: 10px 12px;
+}
+
+.form-status-message.error {
+  border-color: rgba(216, 143, 160, 0.42);
+  background: rgba(255, 248, 244, 0.88);
   color: var(--rose-deep);
 }
 

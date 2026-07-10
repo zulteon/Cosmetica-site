@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { GTM_ID } from "@/lib/tracking";
 import "./globals.css";
-
-const GTM_ID = "GTM-MQ4NWGQ3";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://example.com"),

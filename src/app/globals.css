@@ -1335,8 +1335,32 @@ a {
   padding: 0 14px 12px;
 }
 
+.map-frame {
+  position: relative;
+}
+
 .map-click-target {
-  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: var(--rose-deep);
+  padding: 10px;
+  text-decoration: none;
+}
+
+.map-click-target span {
+  border: 1px solid rgba(216, 143, 160, 0.46);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 26px rgba(110, 70, 62, 0.13);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  padding: 8px 11px;
+  text-transform: uppercase;
 }
 
 .map-card iframe {

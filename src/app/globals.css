@@ -1346,7 +1346,11 @@ a {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  border: 0;
+  background: transparent;
   color: var(--rose-deep);
+  cursor: pointer;
+  font: inherit;
   padding: 10px;
   text-decoration: none;
 }

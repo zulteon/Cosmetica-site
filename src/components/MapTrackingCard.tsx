@@ -32,25 +32,30 @@ export default function MapTrackingCard({ address, location, mapsUrl, src, title
     }, 500);
   }
 
+  function openMap() {
+    trackMapClick();
+    window.setTimeout(() => {
+      window.open(mapsUrl, "_blank", "noopener,noreferrer");
+    }, 150);
+  }
+
   return (
     <article className="map-card">
       <h3>{location}</h3>
       <p>{address}</p>
       <div className="map-frame">
         <iframe title={title} src={src} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
-        <a
+        <button
           className="map-click-target"
-          href={mapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
           aria-label={`${location} megnyitása Google Térképen`}
           onMouseDown={trackMapClick}
           onPointerDown={trackMapClick}
           onTouchStart={trackMapClick}
-          onClick={trackMapClick}
+          onClick={openMap}
+          type="button"
         >
           <span>Megnyitás térképen</span>
-        </a>
+        </button>
       </div>
     </article>
   );

@@ -1,5 +1,6 @@
 import CookieConsent from "@/components/CookieConsent";
 import ContactFormModal from "@/components/ContactFormModal";
+import MapTrackingCard from "@/components/MapTrackingCard";
 import MessengerTrackingLink from "@/components/MessengerTrackingLink";
 import PhoneTrackingLink from "@/components/PhoneTrackingLink";
 import SiteFooter from "@/components/SiteFooter";
@@ -188,16 +189,12 @@ export default function Home() {
                 <ContactFormModal className="contact-form-trigger" />
               </div>
               <div className="map-grid" aria-label="Térképes elérhetőségek">
-                <article className="map-card">
-                  <h3>Szolnok</h3>
-                  <p>{siteContact.primaryAddress}</p>
-                  <iframe
-                    title="Cherry Kozmetika Szolnok térkép"
-                    src="https://www.google.com/maps?q=5000%20Szolnok%2C%20Boldog%20S%C3%A1ndor%20Istv%C3%A1n%20krt.%2040.&output=embed"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
+                <MapTrackingCard
+                  address={siteContact.primaryAddress}
+                  location="Szolnok"
+                  title="Cherry Kozmetika Szolnok térkép"
+                  src="https://www.google.com/maps?q=5000%20Szolnok%2C%20Boldog%20S%C3%A1ndor%20Istv%C3%A1n%20krt.%2040.&output=embed"
                   />
-                </article>
               </div>
             </div>
           </div>

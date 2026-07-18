@@ -192,9 +192,10 @@ export default function Home() {
                 <MapTrackingCard
                   address={siteContact.primaryAddress}
                   location="Szolnok"
+                  mapsUrl="https://www.google.com/maps/search/?api=1&query=5000%20Szolnok%2C%20Boldog%20S%C3%A1ndor%20Istv%C3%A1n%20krt.%2040."
                   title="Cherry Kozmetika Szolnok térkép"
                   src="https://www.google.com/maps?q=5000%20Szolnok%2C%20Boldog%20S%C3%A1ndor%20Istv%C3%A1n%20krt.%2040.&output=embed"
-                  />
+                />
               </div>
             </div>
           </div>

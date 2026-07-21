@@ -5,7 +5,6 @@ export const siteContact = {
   phoneHref: "tel:+36301116369",
   email: "furanita.kozmetika@gmail.com",
   primaryAddress: "5000 Szolnok, Boldog Sándor István krt. 40.",
-  secondaryAddress: "5091 Tószeg, Bartók Béla út 1/B",
   openingHours: "Nyitvatartás: hétfőtől szombatig, bejelentkezés alapján",
   facebookUrl: "https://www.facebook.com/profile.php?id=61556739532689&locale=hu_HU",
   messengerUrl: "https://m.me/61556739532689",

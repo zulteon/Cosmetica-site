@@ -70,6 +70,49 @@ function updateGoogleConsent(consent: Pick<CookieConsentState, "analytics" | "ma
   });
 }
 
+function deleteCookie(name: string) {
+  const hostnameParts = window.location.hostname.split(".");
+  const domains = [
+    window.location.hostname,
+    `.${window.location.hostname}`,
+    hostnameParts.length > 1 ? `.${hostnameParts.slice(-2).join(".")}` : "",
+  ].filter(Boolean);
+
+  for (const domain of domains) {
+    document.cookie = `${name}=; Max-Age=0; path=/; domain=${domain}`;
+  }
+
+  document.cookie = `${name}=; Max-Age=0; path=/`;
+}
+
+function deleteGoogleMeasurementCookies(consent: Pick<CookieConsentState, "analytics" | "marketing">) {
+  if (consent.analytics && consent.marketing) {
+    return;
+  }
+
+  const cookieNames = document.cookie
+    .split(";")
+    .map((cookie) => cookie.trim().split("=")[0])
+    .filter(Boolean);
+
+  for (const cookieName of cookieNames) {
+    if (
+      !consent.analytics &&
+      (cookieName === "_ga" ||
+        cookieName === "_gid" ||
+        cookieName === "_gat" ||
+        cookieName.startsWith("_ga_") ||
+        cookieName.startsWith("_gat_"))
+    ) {
+      deleteCookie(cookieName);
+    }
+
+    if (!consent.marketing && (cookieName.startsWith("_gcl_") || cookieName === "_gcl_aw")) {
+      deleteCookie(cookieName);
+    }
+  }
+}
+
 function saveConsent(consent: Omit<CookieConsentState, "updatedAt">) {
   const nextConsent: CookieConsentState = {
     ...consent,
@@ -80,6 +123,7 @@ function saveConsent(consent: Omit<CookieConsentState, "updatedAt">) {
   localStorage.setItem(COOKIE_STORAGE_KEY, JSON.stringify(nextConsent));
   localStorage.removeItem(LEGACY_COOKIE_STORAGE_KEY);
   updateGoogleConsent(nextConsent);
+  deleteGoogleMeasurementCookies(nextConsent);
   window.dispatchEvent(new Event(COOKIE_CHANGE_EVENT));
 }
 

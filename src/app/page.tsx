@@ -18,19 +18,19 @@ export const metadata: Metadata = {
 const treatments = [
   {
     title: "Arckezelések",
-    text: "Személyre szabott hidratáló, nyugtató és ragyogást adó kezelések Tószegen és Szolnokon.",
+    text: "Személyre szabott hidratáló, nyugtató és ragyogást adó kezelések Szolnokon.",
     icon: "/pictograms/arckezeles.webp",
     href: serviceLinks.facial,
   },
   {
     title: "Bőrápolási tanácsadás",
-    text: "Otthoni rutin finomhangolása letisztult, bőrbarát termékekkel Tószegen és Szolnokon.",
+    text: "Otthoni rutin finomhangolása letisztult, bőrbarát termékekkel Szolnokon.",
     icon: "/pictograms/bortanacsadas.webp",
     href: serviceLinks.waxing,
   },
   {
     title: "Relax szépségápolás",
-    text: "Csendes, nyugodt kezelések Tószegen és Szolnokon, ahol a bőröd és te is fellélegezhetsz.",
+    text: "Csendes, nyugodt kezelések Szolnokon, ahol a bőröd és te is fellélegezhetsz.",
     icon: "/pictograms/relaxArc.webp",
     href: "/arlista#festes",
   },
@@ -178,7 +178,6 @@ export default function Home() {
               </PhoneTrackingLink>
               <span>{siteContact.email}</span>
               <span>{siteContact.primaryAddress}</span>
-              <span>{siteContact.secondaryAddress}</span>
               <span>{siteContact.openingHours}</span>
               <div className="contact-social-links" aria-label="Online kapcsolat">
                 <a className="social-icon-button" href={siteContact.facebookUrl} target="_blank" rel="noreferrer" aria-label="Facebook oldal">

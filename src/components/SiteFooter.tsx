@@ -24,7 +24,6 @@ export default function SiteFooter({ contactHref = "/#kapcsolat" }: SiteFooterPr
         <p>Cherry Kozmetika</p>
         <address className="footer-nap">
           <span>{siteContact.primaryAddress}</span>
-          <span>{siteContact.secondaryAddress}</span>
           <PhoneTrackingLink className="phone-link" href={siteContact.phoneHref}>
             {siteContact.phone}
           </PhoneTrackingLink>
